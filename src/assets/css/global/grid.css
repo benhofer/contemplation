@@ -1,0 +1,56 @@
+.app-grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 160px 1fr 100px; 
+}
+
+.footer {
+    background: lightgray;
+}
+
+.container-grid-simple {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 200px 200px 200px;
+    padding: 3rem;
+}
+
+.grayboxtemplate .item {
+    background: lightgray;
+}
+
+.container-grid-hero {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 2fr 2fr 3fr 3fr 1fr; 
+    grid-template-rows: .5fr auto 3fr;
+    padding: 3rem;
+    height: 100%;
+}
+
+.hero-text  {
+    grid-column-start: 2;
+    grid-column-end: span 2;
+    grid-row-start: 2; 
+    grid-row-end: span 1;
+    background: lightgray;
+}
+
+.hero-image {
+    grid-column-start: 4; 
+    grid-column-end: span 2;
+    grid-row-start: 2; 
+    grid-row-end: span 1;
+    background: lightgray;
+
+}
+
+.container-grid-complex {
+    display: grid;
+}
+
+.grayboxtemplate div {
+    background: lightgray;
+}

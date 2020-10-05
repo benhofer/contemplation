@@ -1,0 +1,28 @@
+.header {
+    display: 'flex';
+    justify-content: 'center';
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.navlist {
+    display: flex;
+    justify-content: center;
+}
+
+.navlist li {
+    list-style: none;
+    padding: 1rem;
+}
+
+.navlist li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.navlist li a.selected {
+    border-bottom-color: blue;
+}
