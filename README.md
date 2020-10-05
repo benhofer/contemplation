@@ -1,6 +1,6 @@
-# studious-octo-journey
+# Contemplation App
 
-Boilerplate seed app code for a static website using create-react-app.
+App for aiding in contemplative prayer.
 
 --
 
