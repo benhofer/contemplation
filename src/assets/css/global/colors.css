@@ -1,0 +1,12 @@
+body {
+    background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
+}
+
+.wrapper {
+    transition: background-color .6s;
+    background: black;
+}
+
+.wrapper.press {
+    background:transparent;
+}

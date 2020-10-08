@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Meditations from './pages/Meditations';
 import Page from './pages/Page';
 import styles from './assets/css/components/app.module.css';
+import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
 import {
   BrowserRouter as Router,
@@ -10,10 +11,12 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [wrapClass, setWrapClass] = useState('');
+
   return (
-    <div className="app-grid">
+    <div className={"wrapper " + wrapClass}>
       <Router>
-        <header className={styles.header}>
+        <header className={styles.header} onMouseEnter={() => setWrapClass('press')} onMouseLeave={() => setWrapClass('')}>
           <h1>TEMPORA</h1>
         </header>
         <div className="main">

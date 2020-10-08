@@ -1,4 +1,4 @@
-.app-grid {
+.wrapper {
     display: grid;
     height: 100vh;
     grid-template-columns: 100%;
