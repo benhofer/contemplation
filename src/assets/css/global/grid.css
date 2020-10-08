@@ -6,8 +6,8 @@
 }
 
 .footer {
-    background: lightgray;
-}
+    margin: 0 3rem;
+    }
 
 .container-grid-simple {
     display: grid;

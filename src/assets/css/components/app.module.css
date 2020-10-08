@@ -1,10 +1,13 @@
 .header {
-    display: 'flex';
-    justify-content: 'center';
+    display: flex;
+    justify-content: center;
+    grid-row-start: 2;
+    align-items: center;
 }
 
 .header h1 {
     text-align: center;
+
 }
 
 .navlist {

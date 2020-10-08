@@ -1,7 +1,6 @@
 import React from 'react';
-import Simple from './pages/Simple';
-import Hero from './pages/Hero';
-import Complex from './pages/Complex';
+import Meditations from './pages/Meditations';
+import Page from './pages/Page';
 import styles from './assets/css/components/app.module.css';
 import './assets/css/global/grid.css';
 import {
@@ -15,25 +14,15 @@ function App() {
     <div className="app-grid">
       <Router>
         <header className={styles.header}>
-          <h1>A few layouts using CSS Display Grid</h1>
-          <nav>
-            <ul className={styles.navlist}> 
-              <li><NavLink activeClassName={styles.selected} exact='true' to="/">Simple</NavLink></li>
-              <li><NavLink activeClassName={styles.selected} to="/hero">Hero</NavLink></li>
-              <li><NavLink activeClassName={styles.selected} to="/complex">Complex</NavLink></li>
-            </ul>
-          </nav>
+          <h1>TEMPORA</h1>
         </header>
         <div className="main">
           <Switch>        
-            <Route path="/hero">
-              <Hero />
+            <Route path="/page">
+              <Page />
             </Route>
-            <Route path="/complex">
-              <Complex />
-            </Route>
-            <Route path="/">
-              <Simple />
+            <Route path="/meditations">
+              <Meditations />
             </Route>
           </Switch>
         </div>
