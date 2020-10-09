@@ -2,7 +2,20 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 100%;
-    grid-template-rows: 160px 1fr 100px; 
+    grid-template-rows: 1fr 100px;
+    }
+
+.wrapper.engaged {
+    grid-template-rows: 1fr 100px;
+}
+
+.app-header {
+    transition: height .8s ease-out;
+    cursor: pointer;
+}
+
+.engaged .app-header {
+    height: 7rem;
 }
 
 .footer {

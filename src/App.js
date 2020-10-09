@@ -16,20 +16,26 @@ function App() {
   return (
     <div className={"wrapper " + wrapClass}>
       <Router>
-        <header className={styles.header} onMouseEnter={() => setWrapClass('press')} onMouseLeave={() => setWrapClass('')}>
-          <h1>TEMPORA</h1>
-        </header>
-        <div className="main">
-          <Switch>        
-            <Route path="/page">
-              <Page />
-            </Route>
-            <Route path="/meditations">
-              <Meditations />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+         <div>
+            <header className={`${styles.header} app-header`}
+              onMouseEnter={() => {wrapClass !== 'engaged' && setWrapClass('press')}} 
+              onMouseLeave={() => {wrapClass !== 'engaged' && setWrapClass('')}} 
+              onClick={()=>{ wrapClass !== 'engaged' ? setWrapClass('engaged') : setWrapClass('')}}>
+              <h1>TEMPORA</h1>
+            </header>
+            <div className="main">
+              
+              <Switch>        
+                <Route path="/page">
+                  <Page />
+                </Route>
+                <Route path="/meditations">
+                  <Meditations />
+                </Route>
+              </Switch>
+            </div>
+          </div>
+       </Router>
       <div className="footer">
         
       </div>
