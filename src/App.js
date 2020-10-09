@@ -14,32 +14,43 @@ function App() {
   const [wrapClass, setWrapClass] = useState('');
 
   return (
-    <div className={"wrapper " + wrapClass}>
-      <Router>
-         <div>
-            <header className={`${styles.header} app-header`}
-              onMouseEnter={() => {wrapClass !== 'engaged' && setWrapClass('press')}} 
-              onMouseLeave={() => {wrapClass !== 'engaged' && setWrapClass('')}} 
-              onClick={()=>{ wrapClass !== 'engaged' ? setWrapClass('engaged') : setWrapClass('')}}>
-              <h1>TEMPORA</h1>
-            </header>
-            <div className="main">
-              
-              <Switch>        
-                <Route path="/page">
-                  <Page />
-                </Route>
-                <Route path="/meditations">
-                  <Meditations />
-                </Route>
-              </Switch>
-            </div>
+      <div className={`solid container + ${wrapClass}`}>
+        <div className="gradient wrapper">
+          <div className="solid inner">
+              <div className="content">
+                <Router>
+                  <header className={`${styles.header} app-header`}> 
+                        <h1>TEMPORA</h1>
+                        <nav className={`${styles.navlist} main-nav`}>
+                          <ul onMouseEnter={() => { !wrapClass.includes('press') && setWrapClass('press')}} 
+                              onMouseLeave={() => { !wrapClass.includes('page') && setWrapClass('')}}>
+                            <li>
+                              <NavLink to="/prayers" onClick={()=>{setWrapClass('engaged prayer page')}}>Contemplative Prayer</NavLink>
+                            </li> 
+                            <li>
+                              <NavLink to="/meditations"
+                                onClick={()=>{setWrapClass('engaged meditation page')}}>Meditation</NavLink>
+                            </li>   
+                            <li>
+                              <NavLink to="/liturgy" onClick={()=>{setWrapClass('engaged liturgy page')}}>Liturgy</NavLink>
+                            </li> 
+                            <li>
+                              <NavLink to="/contribute" onClick={()=>{setWrapClass('engaged contribute page')}}>Contribute</NavLink>
+                            </li>
+                            <li>
+                              <NavLink  onClick={()=>{setWrapClass('engaged about page')}} to="/about">About</NavLink>
+                            </li>
+                          </ul>                    
+                        </nav>
+                  </header>
+                </Router>
+              </div>
+              <div className="footer">
+                
+              </div>
           </div>
-       </Router>
-      <div className="footer">
-        
+        </div>
       </div>
-    </div>
   );
 }
 

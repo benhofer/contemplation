@@ -1,20 +1,67 @@
-body {
-    background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
+html {
+    background: white;
+    color: white;
+    transition: background-color .6s;
 }
 
-.wrapper {
-    transition: background-color .6s;
+body {
     background: black;
 }
 
-.wrapper.press {
-    background:transparent;
+html, .solid {
+    transition: background-color .6s;
 }
 
-.wrapper.engaged {
-    background: radial-gradient(
+    /* engaged meditation */
+     /* background-image: radial-gradient(
         rgba(126, 126, 75, .68) 0,
         rgba(57, 52, 51, .83) 40%,
-        black
-      );;
+        transparent
+      );; */
+
+    /*  */
+
+    /* press */
+    /*  */
+
+body:hover, body:focus {
+    background: #1B1C1D;
+}
+
+.wrapper {
+   background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
+}
+
+.container.press .inner {
+    background-color: rgba(11, 23, 55, .25);
+}
+
+.container.engaged .wrapper {
+    background-image: radial-gradient(
+        rgba(126, 126, 75, .27) 0,
+        rgba(57, 52, 51, .68) 40%,
+        transparent
+    );;
+}
+
+.container.engaged .inner {
+    background-color: rgba(0,0,0,0);
+}
+
+.main {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.meditation .main  {
+    opacity: 1;
+}
+
+.main-nav {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+body:hover .main-nav, body:focus .main-nav {
+    opacity: 1; 
 }

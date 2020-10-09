@@ -1,21 +1,23 @@
-.wrapper {
+
+html, body {
+    min-height: 100vh;
+}
+
+.inner {
     display: grid;
     height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 100px;
-    }
-
-.wrapper.engaged {
-    grid-template-rows: 1fr 100px;
 }
 
 .app-header {
-    transition: height .8s ease-out;
     cursor: pointer;
 }
 
-.engaged .app-header {
-    height: 7rem;
+.content {
+    display: grid; 
+    grid-template-columns: 100%;
+    grid-template-rows: 7rem 1fr;
 }
 
 .footer {
@@ -25,13 +27,9 @@
 .container-grid-simple {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: repeat(auto-fill, 200px); 
     grid-template-rows: 200px 200px 200px;
     padding: 3rem;
-}
-
-.grayboxtemplate .item {
-    background: lightgray;
 }
 
 .container-grid-hero {
@@ -62,8 +60,4 @@
 
 .container-grid-complex {
     display: grid;
-}
-
-.grayboxtemplate div {
-    background: lightgray;
 }
