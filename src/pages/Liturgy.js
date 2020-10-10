@@ -12,8 +12,8 @@ function Liturgy() {
       <div>
           <div className='grayboxtemplate container-grid-simple'>
             {
-              items.map(d => 
-                <Card ></Card>
+                items.map((d,i) => 
+                <Card key={'item-'+i} />
               )
             }
           </div>
