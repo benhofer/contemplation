@@ -83,7 +83,7 @@ body:hover, body:focus {
     transition: opacity 1s;
 }
 
-.meditation .main  {
+.engaged .main  {
     opacity: 1;
 }
 

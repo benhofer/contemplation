@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
-import Meditations from './pages/Meditations';
+import Meditations from './pages/Meditation';
 import Page from './pages/Page';
 import styles from './assets/css/components/app.module.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
+import Prayer from './pages/Prayer';
+import Meditation from './pages/Meditation';
+import Liturgy from './pages/Liturgy';
+import Contribute from './pages/Contribute';
+import About from './pages/About';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,7 +28,7 @@ function App() {
               <div className="content">
                 <Router>
                   <header className={`${styles.header} app-header`}> 
-                        <h1>TEMPORA</h1>
+                        <h1><NavLink to="/">TEMPORA</NavLink></h1>
                         <nav className={`${styles.navlist} main-nav`}>
                           <ul onMouseEnter={() => { setStateClass('press')}} onMouseLeave={() => pageClass ? setStateClass('engaged') : setStateClass('')}>
                             <li>
@@ -58,6 +64,27 @@ function App() {
                           </ul>                    
                         </nav>
                   </header> 
+                  <div className="main">
+                  <Switch>        
+                    <Route path="/prayers">
+                      <Prayer />
+                    </Route>
+                    <Route path="/meditations">
+                      <Meditations />
+                    </Route>
+                    <Route path="/liturgy">
+                      <Liturgy />
+                    </Route>
+                    <Route path="/contribute">
+                      <Contribute />
+                    </Route>
+                    <Route path="/about">
+                      <About />
+                    </Route>
+                    <Route path="/">
+                    </Route>
+                  </Switch>
+                  </div>
                 </Router>
               </div>
               <footer className={`${styles.footer} page-footer`}>

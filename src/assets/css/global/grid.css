@@ -5,7 +5,7 @@ html, body {
 
 .inner {
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: 1fr 100px;
 }
@@ -17,7 +17,7 @@ html, body {
 .content {
     display: grid; 
     grid-template-columns: 100%;
-    grid-template-rows: 7rem 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 .footer {
@@ -27,8 +27,8 @@ html, body {
 .container-grid-simple {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, 200px); 
-    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-auto-rows: 100px;
     padding: 3rem;
 }
 

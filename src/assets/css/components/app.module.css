@@ -1,7 +1,6 @@
 .header {
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding-top: 5rem;
 }
 
@@ -13,6 +12,11 @@
     text-transform: uppercase;
     letter-spacing: .75rem;
     font-weight: 100;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
 }
 
 .navlist {
