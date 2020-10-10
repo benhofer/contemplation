@@ -11,12 +11,12 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [wrapClass, setStateClass] = useState('');
+  const [stateClass, setStateClass] = useState('');
   const [linkClass, setLinkClass] = useState('');
   const [pageClass, setPageClass] = useState('');
 
   return (
-      <div className={`solid container ${wrapClass} ${linkClass} ${pageClass}`}>
+      <div className={`solid container ${stateClass} ${linkClass} ${pageClass}`}>
         <div className="gradient wrapper">
           <div className="solid inner">
               <div className="content">
@@ -24,7 +24,7 @@ function App() {
                   <header className={`${styles.header} app-header`}> 
                         <h1>TEMPORA</h1>
                         <nav className={`${styles.navlist} main-nav`}>
-                          <ul onMouseEnter={() => { setStateClass('press')}}>
+                          <ul onMouseEnter={() => { setStateClass('press')}} onMouseLeave={() => pageClass ? setStateClass('engaged') : setStateClass('')}>
                             <li>
                               <NavLink to="/prayers" 
                                  onMouseEnter={() => { setLinkClass('prayer')}} 
@@ -57,12 +57,12 @@ function App() {
                             </li>
                           </ul>                    
                         </nav>
-                  </header>
+                  </header> 
                 </Router>
               </div>
-              <div className="footer">
-                
-              </div>
+              <footer className={`${styles.footer} page-footer`}>
+                <small>O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:33</i></small>
+              </footer>
           </div>
         </div>
       </div>

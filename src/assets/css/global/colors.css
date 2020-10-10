@@ -87,11 +87,12 @@ body:hover, body:focus {
     opacity: 1;
 }
 
-.main-nav {
+.main-nav, .page-footer {
     opacity: 0;
     transition: opacity 2s;
 }
 
-body:hover .main-nav, body:focus .main-nav {
+body:hover .main-nav, body:focus .main-nav,
+body:hover .page-footer, body:focus .page-footer {
     opacity: 1; 
 }

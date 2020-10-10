@@ -47,3 +47,8 @@
 .navlist li a.selected {
     border-bottom-color: white;
 }
+
+.footer small {
+    display: block;
+    text-align: center;
+}
