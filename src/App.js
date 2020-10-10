@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Meditations from './pages/Meditation';
 import Page from './pages/Page';
-import styles from './assets/css/components/app.module.css';
+import styles from './assets/css/pages/app.module.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
 import Prayer from './pages/Prayer';
