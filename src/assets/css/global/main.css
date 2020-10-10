@@ -14,7 +14,7 @@
    html {
     font-size: 1em;
     line-height: 1.4;
-    font-family: "Lato", sans-ser
+    font-family: "Lato", sans-serif;
   }
   
   body {
@@ -33,12 +33,12 @@
    */
   
   ::-moz-selection {
-    background: #b3d4fc;
+    background: rgba(215, 251, 204, .124);
     text-shadow: none;
   }
   
   ::selection {
-    background: #b3d4fc;
+    background: rgba(215, 251, 204, .124);
     text-shadow: none;
   }
   

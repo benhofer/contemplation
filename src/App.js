@@ -11,10 +11,12 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [wrapClass, setWrapClass] = useState('');
+  const [wrapClass, setStateClass] = useState('');
+  const [linkClass, setLinkClass] = useState('');
+  const [pageClass, setPageClass] = useState('');
 
   return (
-      <div className={`solid container + ${wrapClass}`}>
+      <div className={`solid container ${wrapClass} ${linkClass} ${pageClass}`}>
         <div className="gradient wrapper">
           <div className="solid inner">
               <div className="content">
@@ -22,23 +24,36 @@ function App() {
                   <header className={`${styles.header} app-header`}> 
                         <h1>TEMPORA</h1>
                         <nav className={`${styles.navlist} main-nav`}>
-                          <ul onMouseEnter={() => { !wrapClass.includes('press') && setWrapClass('press')}} 
-                              onMouseLeave={() => { !wrapClass.includes('page') && setWrapClass('')}}>
+                          <ul onMouseEnter={() => { setStateClass('press')}}>
                             <li>
-                              <NavLink to="/prayers" onClick={()=>{setWrapClass('engaged prayer page')}}>Contemplative Prayer</NavLink>
+                              <NavLink to="/prayers" 
+                                 onMouseEnter={() => { setLinkClass('prayer')}} 
+                                 onMouseLeave={() => { setLinkClass('')}}
+                                 onClick={()=>{setStateClass('engaged'); setPageClass('prayer-page'); setLinkClass('') }}>Contemplative Prayer</NavLink>
                             </li> 
                             <li>
                               <NavLink to="/meditations"
-                                onClick={()=>{setWrapClass('engaged meditation page')}}>Meditation</NavLink>
+                                onMouseEnter={() => { setLinkClass('meditation')}} 
+                                onMouseLeave={() => { setLinkClass('')}}
+                                onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditation</NavLink>
                             </li>   
                             <li>
-                              <NavLink to="/liturgy" onClick={()=>{setWrapClass('engaged liturgy page')}}>Liturgy</NavLink>
+                              <NavLink to="/liturgy" 
+                                 onMouseEnter={() => { setLinkClass('liturgy')}} 
+                                 onMouseLeave={() => { setLinkClass('')}}
+                                onClick={()=>{setStateClass('engaged'); setPageClass('liturgy-page'); setLinkClass('')}}>Liturgy</NavLink>
                             </li> 
                             <li>
-                              <NavLink to="/contribute" onClick={()=>{setWrapClass('engaged contribute page')}}>Contribute</NavLink>
+                              <NavLink to="/contribute" 
+                                 onMouseEnter={() => { setLinkClass('contribute')}} 
+                                 onMouseLeave={() => { setLinkClass('')}}
+                                 onClick={()=>{setStateClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink>
                             </li>
                             <li>
-                              <NavLink  onClick={()=>{setWrapClass('engaged about page')}} to="/about">About</NavLink>
+                              <NavLink 
+                                 onMouseEnter={() => { setLinkClass('about')}} 
+                                 onMouseLeave={() => { setLinkClass('')}}
+                                onClick={()=>{setStateClass('engaged'); setPageClass('about-page'); setLinkClass('')}} to="/about">About</NavLink>
                             </li>
                           </ul>                    
                         </nav>

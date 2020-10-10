@@ -32,20 +32,50 @@ body:hover, body:focus {
    background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
 }
 
+/* Nav Hover */
 .container.press .inner {
     background-color: rgba(11, 23, 55, .25);
 }
 
-.container.engaged .wrapper {
-    background-image: radial-gradient(
-        rgba(126, 126, 75, .27) 0,
-        rgba(57, 52, 51, .68) 40%,
-        transparent
-    );;
+/* Link Hovers */
+.container.press.prayer .inner {
+    background-color: rgba(77, 1, 77, .12);
+}
+
+.container.press.meditation .inner {
+    background-color: rgba(11, 23, 55, .33);
+}
+
+.container.press.liturgy .inner {
+    background-color: rgba(237, 188, 1, 0.08);
+}
+
+.container.press.contribute .inner {
+    background-color: rgba(100, 30, 10, 0.18);
+}
+
+.container.press.about .inner {
+    background-color: rgba(3, 1, 6, 0.13);
+}
+
+.container.engaged.prayer-page {
+    background-color: rgba(77, 1, 77, .33);
+}
+
+.container.engaged.meditation-page {
+    background-color: rgba(11, 23, 55, .44);
+}
+
+.container.engaged.liturgy-page {
+    background-color: rgba(237, 188, 1, 0.12);
+}
+
+.container.engaged.contribute-page {
+    background-color: rgba(100, 30, 10, 0.26);
 }
 
 .container.engaged .inner {
-    background-color: rgba(0,0,0,0);
+    background-color: none;
 }
 
 .main {
