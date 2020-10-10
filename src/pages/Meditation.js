@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../assets/css/components/meditations.module.css';
+import Card from '../components/Card';
 
 function Meditation() {
   let items = [];
@@ -12,9 +12,9 @@ function Meditation() {
       <div>
           <div className='grayboxtemplate container-grid-simple'>
             {
-              items.map(d => 
-                <div className={classes.item}></div>
-              )
+              items.map(d => (
+                <Card />
+              ))
             }
           </div>
       </div>

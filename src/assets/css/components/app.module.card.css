@@ -1,0 +1,11 @@
+
+.card {
+    opacity: .5;
+    border: 1px solid white;
+    background: rgba(255,255,255,.06);
+    transition: opacity .2s;
+}
+
+.card:hover, .card:focus {
+    opacity: 1;
+}
