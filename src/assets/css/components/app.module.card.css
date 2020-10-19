@@ -4,6 +4,7 @@
     border: 1px solid white;
     background: rgba(255,255,255,.06);
     transition: opacity .2s;
+    padding: 1rem;
 }
 
 .card:hover, .card:focus {

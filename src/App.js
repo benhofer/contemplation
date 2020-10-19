@@ -9,35 +9,16 @@ import Meditation from './pages/Meditation';
 import Liturgy from './pages/Liturgy';
 import Contribute from './pages/Contribute';
 import About from './pages/About';
-import axios from 'axios';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route, NavLink
 } from "react-router-dom";
 
-
-const API_URL = "/data.json";
-// const API_URL = "https://mp22l1ux2d.execute-api.us-east-1.amazonaws.com/default/tempora-pray-getcatalog"
-// const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
-
-
 function App() {
   const [stateClass, setStateClass] = useState('');
   const [linkClass, setLinkClass] = useState('');
   const [pageClass, setPageClass] = useState('');
-
-  useEffect(() => {
-      axios.get(API_URL)
-        .then((response) => {
-          let catalog = response.data
-          console.log(catalog)
-        })
-        .catch((e) => {
-          console.log(e)
-        })
-    },[])
 
   return (
       <div className={`solid container ${stateClass} ${linkClass} ${pageClass}`}>
