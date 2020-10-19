@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Meditations from './pages/Meditation';
 import Page from './pages/Page';
 import styles from './assets/css/pages/app.module.css';
@@ -9,6 +9,7 @@ import Meditation from './pages/Meditation';
 import Liturgy from './pages/Liturgy';
 import Contribute from './pages/Contribute';
 import About from './pages/About';
+import axios from 'axios';
 
 import {
   BrowserRouter as Router,
@@ -16,10 +17,27 @@ import {
   Route, NavLink
 } from "react-router-dom";
 
+
+const API_URL = "/data.json";
+// const API_URL = "https://mp22l1ux2d.execute-api.us-east-1.amazonaws.com/default/tempora-pray-getcatalog"
+// const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
+
+
 function App() {
   const [stateClass, setStateClass] = useState('');
   const [linkClass, setLinkClass] = useState('');
   const [pageClass, setPageClass] = useState('');
+
+  useEffect(() => {
+      axios.get(API_URL)
+        .then((response) => {
+          let catalog = response.data
+          console.log(catalog)
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    },[])
 
   return (
       <div className={`solid container ${stateClass} ${linkClass} ${pageClass}`}>
@@ -32,34 +50,16 @@ function App() {
                         <nav className={`${styles.navlist} main-nav`}>
                           <ul onMouseEnter={() => { setStateClass('press')}} onMouseLeave={() => pageClass ? setStateClass('engaged') : setStateClass('')}>
                             <li>
-                              <NavLink to="/prayers" 
-                                 onMouseEnter={() => { setLinkClass('prayer')}} 
-                                 onMouseLeave={() => { setLinkClass('')}}
-                                 onClick={()=>{setStateClass('engaged'); setPageClass('prayer-page'); setLinkClass('') }}>Contemplative Prayer</NavLink>
-                            </li> 
-                            <li>
                               <NavLink to="/meditations"
                                 onMouseEnter={() => { setLinkClass('meditation')}} 
                                 onMouseLeave={() => { setLinkClass('')}}
-                                onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditation</NavLink>
+                                onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink>
                             </li>   
-                            <li>
-                              <NavLink to="/liturgy" 
-                                 onMouseEnter={() => { setLinkClass('liturgy')}} 
-                                 onMouseLeave={() => { setLinkClass('')}}
-                                onClick={()=>{setStateClass('engaged'); setPageClass('liturgy-page'); setLinkClass('')}}>Liturgy</NavLink>
-                            </li> 
                             <li>
                               <NavLink to="/contribute" 
                                  onMouseEnter={() => { setLinkClass('contribute')}} 
                                  onMouseLeave={() => { setLinkClass('')}}
                                  onClick={()=>{setStateClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink>
-                            </li>
-                            <li>
-                              <NavLink 
-                                 onMouseEnter={() => { setLinkClass('about')}} 
-                                 onMouseLeave={() => { setLinkClass('')}}
-                                onClick={()=>{setStateClass('engaged'); setPageClass('about-page'); setLinkClass('')}} to="/about">About</NavLink>
                             </li>
                           </ul>                    
                         </nav>

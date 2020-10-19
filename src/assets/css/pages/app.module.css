@@ -25,13 +25,14 @@ header h1 a {
 }
 
 .navlist ul {
+    padding-left: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .navlist li {
     list-style: none;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 0;
 }
 
 .navlist li a {
