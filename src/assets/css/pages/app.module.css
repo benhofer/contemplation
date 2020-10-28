@@ -19,23 +19,7 @@ header h1 a {
     color: white;
 }
 
-.navlist {
-    display: flex;
-    justify-content: center;
-}
-
-.navlist ul {
-    padding-left: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.navlist li {
-    list-style: none;
-    padding: 1rem 2rem 1rem 0;
-}
-
-.navlist li a {
+.header a {
     text-decoration: none;
     border-bottom: 1px solid transparent;
     color: white;
@@ -44,12 +28,12 @@ header h1 a {
     transition: opacity .4s; 
 }
 
-.navlist li a:hover, 
-.navlist li a:focus {
+.header a:hover, 
+.header a:focus {
     opacity: 1;
 }
 
-.navlist li a.selected {
+.header a.selected {
     border-bottom-color: white;
 }
 

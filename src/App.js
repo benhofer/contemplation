@@ -27,23 +27,15 @@ function App() {
               <div className="content">
                 <Router>
                   <header className={`${styles.header} app-header`}> 
-                        <h1><NavLink to="/">TEMPORA</NavLink></h1>
-                        <nav className={`${styles.navlist} main-nav`}>
-                          <ul onMouseEnter={() => { setStateClass('press')}} onMouseLeave={() => pageClass ? setStateClass('engaged') : setStateClass('')}>
-                            <li>
-                              <NavLink to="/meditations"
-                                onMouseEnter={() => { setLinkClass('meditation')}} 
-                                onMouseLeave={() => { setLinkClass('')}}
-                                onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink>
-                            </li>   
-                            <li>
-                              <NavLink to="/contribute" 
-                                 onMouseEnter={() => { setLinkClass('contribute')}} 
-                                 onMouseLeave={() => { setLinkClass('')}}
-                                 onClick={()=>{setStateClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink>
-                            </li>
-                          </ul>                    
-                        </nav>
+                    <NavLink to="/meditations"
+                      onMouseEnter={() => { setLinkClass('meditation')}} 
+                      onMouseLeave={() => { setLinkClass('')}}
+                      onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink><h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                    <NavLink to="/contribute" 
+                        onMouseEnter={() => { setLinkClass('contribute')}} 
+                        onMouseLeave={() => { setLinkClass('')}}
+                        onClick={()=>{setStateClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink>
+                    
                   </header> 
                   <div className="main">
                   <Switch>        

@@ -41,12 +41,10 @@ function Meditation(props) {
   },[]);
 
     return (
-      <div>
-          <div className='grayboxtemplate container-grid-simple'>
-            { meditations && meditations.map(m => 
-              <Card title={m.author} text={m.text} />  
-            ) }
-          </div>
+      <div className='grayboxtemplate container-grid-simple'>
+        { meditations && meditations.map(m => 
+          <Card title={m.author} text={m.text} />  
+        ) }
       </div>
     )
 }
