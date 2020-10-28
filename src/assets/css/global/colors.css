@@ -24,8 +24,10 @@ html, .solid {
     /* press */
     /*  */
 
-body:hover, body:focus {
-    background: #1B1C1D;
+body:hover, body:focus
+ {
+    background: #0B0C0D;
+    /* background: black; */
 }
 
 .wrapper {
