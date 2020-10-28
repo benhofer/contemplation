@@ -16,6 +16,7 @@ function Meditation(props) {
       axios.get(API_URL)
         .then((response) => {
           catalog = response.data;
+          let newStructure = [];
           catalog.map(author => {
             return author["works"].map(work => {
               return work["sections"].map(section => {
@@ -30,20 +31,17 @@ function Meditation(props) {
               })
             })
           })
+          setMeditations(newStructure);
         })
         .catch((e) => {
           console.log(e)
         })
-
-    let newStructure = [];
-    setMeditations(newStructure);
-
-  },[]);
+  });
 
     return (
       <div className='grayboxtemplate container-grid-simple'>
-        { meditations && meditations.map(m => 
-          <Card title={m.author} text={m.text} />  
+        { meditations && meditations.map((m,i) => 
+          <Card key={'meditation-'+i} title={m.author} text={m.text} />  
         ) }
       </div>
     )
