@@ -17,19 +17,24 @@
 header h1 a {
     text-decoration: none;
     color: white;
+    transition: opacity .4s;
 }
 
-.header a {
+.header > a {
     text-decoration: none;
     border-bottom: 1px solid transparent;
     color: white;
-    opacity: .75;
     font-weight: 100;
     transition: opacity .4s; 
+    opacity: 0;
 }
 
-.header a:hover, 
-.header a:focus {
+body:hover .header a, body:focus .header a {
+    opacity: .75;
+}
+
+body:hover .header a:hover, 
+body:hover .header a:focus {
     opacity: 1;
 }
 

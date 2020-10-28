@@ -27,10 +27,12 @@ function App() {
               <div className="content">
                 <Router>
                   <header className={`${styles.header} app-header`}> 
-                    <NavLink to="/meditations"
+                    <NavLink 
+                      to="/meditations"
                       onMouseEnter={() => { setLinkClass('meditation')}} 
                       onMouseLeave={() => { setLinkClass('')}}
-                      onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink><h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                      onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink>
+                    <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
                     <NavLink to="/contribute" 
                         onMouseEnter={() => { setLinkClass('contribute')}} 
                         onMouseLeave={() => { setLinkClass('')}}
