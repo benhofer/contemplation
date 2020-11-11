@@ -46,3 +46,23 @@ body:hover .header a:focus {
     display: block;
     text-align: center;
 }
+
+.sub_footer {
+    position: absolute;
+    bottom: 18px;
+    width: 100vw;
+    height: 26px;
+}
+
+.sub_footer nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.sub_footer nav a {
+    padding: 0 1rem;
+    font-size: smaller;
+    display: block;
+    line-height: 26px;
+}

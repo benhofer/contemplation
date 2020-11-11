@@ -25,7 +25,7 @@ html, body {
 }
 
 .main {
-    margin: 9rem 0 7rem;
+    padding: 12rem 0 7rem;
     height: calc(100vh - 17rem);
     overflow: auto;
     position: relative;
@@ -33,14 +33,13 @@ html, body {
 }
 
 .content {
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 10rem);
     display: grid; 
-    grid-template-columns: 100%;
-    grid-template-rows: 120px 1fr;
 }
 
 .page-footer {
-    padding: 4rem 0;
+    padding-top: 1rem;
+    height: 8rem;
     position: fixed;
     width: 100vw;
     bottom: 0;

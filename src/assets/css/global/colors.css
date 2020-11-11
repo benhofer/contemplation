@@ -26,8 +26,12 @@ html, .solid {
 
 body:hover, body:focus
  {
-    background: #0A0B0C;
+    background-color: #1b1a1c;
     /* background: black; */
+}
+
+.init .images {
+    opacity: 0;
 }
 
 .wrapper {
@@ -40,39 +44,39 @@ body:hover, body:focus
 }
 
 /* Link Hovers */
-.container.press.prayer .inner {
+.container.press.purple .inner {
     background-color: rgba(77, 1, 77, .12);
 }
 
-.container.press.meditation .inner {
+.container.press.blue .inner {
     background-color: rgba(11, 23, 55, .33);
 }
 
-.container.press.liturgy .inner {
+.container.press.gold .inner {
     background-color: rgba(237, 188, 1, 0.08);
 }
 
-.container.press.contribute .inner {
+.container.press.red .inner {
     background-color: rgba(100, 30, 10, 0.18);
 }
 
-.container.press.about .inner {
+.container.press.black .inner {
     background-color: rgba(3, 1, 6, 0.13);
 }
 
-.container.engaged.prayer-page {
+.container.engaged.purple {
     background-color: rgba(77, 1, 77, .33);
 }
 
-.container.engaged.meditation-page {
+.container.engaged.blue {
     background-color: rgba(11, 23, 55, .44);
 }
 
-.container.engaged.liturgy-page {
+.container.engaged.gold {
     background-color: rgba(237, 188, 1, 0.12);
 }
 
-.container.engaged.contribute-page {
+.container.engaged.red, .container.clicked.red {
     background-color: rgba(100, 30, 10, 0.26);
 }
 
@@ -82,7 +86,11 @@ body:hover, body:focus
 
 .main {
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s ease-in;
+}
+
+.press .main {
+    opacity: .75;
 }
 
 .engaged .main  {
@@ -102,15 +110,21 @@ body:hover .page-footer, body:focus .page-footer {
 .images {
     position: fixed;
     width: 100%;
-    margin: calc(50vh - 150px) auto;
     display:block;
-    transition: transform .4s, opacity .4s; 
+    transition: opacity .8s ease-out;
+    z-index: 100;
+}
+
+.press .images, .engaged .images {
+    z-index: 0;
+    opacity: 0; 
 }
 
 .images img {
     width: 100px; 
     margin: 0 auto;
     display: block;
+    margin: calc(50vh - 150px) auto;
 }
 
 .meditation-page .images {
