@@ -21,7 +21,7 @@
     margin-bottom: 2.75rem;
 }
 
-.primary_search.active {
+.primary_search.search_active {
     background: rgba(255,255,255,.075);
 }
 
@@ -32,6 +32,8 @@
     border-color: transparent;
     color: white;
     font-size: 1.25rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
 }
 
 .primary_search input::placeholder {
@@ -41,7 +43,6 @@
 }
 
 .primary_search input:focus {
-    background: rgba(255,255,255,.025);
     border-color: transparent;
     outline: none;
     color: white;
@@ -51,6 +52,19 @@
     background: rgba(255,255,255,0);
     border: none;
     width: 5rem;
+    color: rgba(255,255,255,.5);
+}
+
+.search_active .search_btn {
+    color: rgba(255,255,255,.5);
+}
+
+.search_btn:hover {
+    color: rgba(255,255,255,.75);
+}
+
+.search_btn:active {
+    color: rgba(255,255,255,1);
 }
 
 .search_btn:active, .search_btn:focus {

@@ -11,6 +11,7 @@ const API_URL = "/data.json";
 
 function Search (props) {
   const [meditations, setMeditations] = useState('');
+  const [inputFocus, setInputFocus] = useState(false);
 
   useEffect(() => {
     let catalog;
@@ -43,10 +44,10 @@ function Search (props) {
       <div className={`${styles.search_page}`}>
         <div className={`${styles.search_form}`}>
           <label for="search" className="sr-only">Search Meditations</label>
-          <div className={`${styles.primary_search}`}>
-            <input type="text" placeholder='Search Meditations' />
+          <div className={`${styles.primary_search} ${inputFocus ? styles.search_active : ''}`}>
+            <input type="text" placeholder='Search Meditations' onFocus={()=>{setInputFocus(true)}} onBlur={()=>{setInputFocus(false)}} />
             <button className={`${styles.search_btn}`}>
-              <Icon icon={roundSearch} style={{fontSize: '2rem', color: 'white'}} /> 
+              <Icon icon={roundSearch} style={{fontSize: '2rem'}} /> 
               <span class="sr-only">Search</span>
             </button>
           </div>
