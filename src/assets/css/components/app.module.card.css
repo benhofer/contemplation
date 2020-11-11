@@ -1,12 +1,15 @@
 
 .card {
     opacity: .5;
-    border: 1px solid white;
-    background: rgba(255,255,255,.06);
+    border: 2px solid rgba(255, 255, 255, .2);
     transition: opacity .2s;
-    padding: 1rem;
+    padding: 2rem;
+    overflow-y: auto;
+    border-radius: 2px;
+    transition: opacity .2s ease-in, border-color .2s ease-in;
 }
 
 .card:hover, .card:focus {
     opacity: 1;
+    border-color: white;
 }

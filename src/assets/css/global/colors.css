@@ -26,7 +26,7 @@ html, .solid {
 
 body:hover, body:focus
  {
-    background: #0B0C0D;
+    background: #0A0B0C;
     /* background: black; */
 }
 
@@ -97,4 +97,22 @@ body:hover, body:focus
 body:hover .main-nav, body:focus .main-nav,
 body:hover .page-footer, body:focus .page-footer {
     opacity: 1; 
+}
+
+.images {
+    position: fixed;
+    width: 100%;
+    margin: calc(50vh - 150px) auto;
+    display:block;
+    transition: transform .4s, opacity .4s; 
+}
+
+.images img {
+    width: 100px; 
+    margin: 0 auto;
+    display: block;
+}
+
+.meditation-page .images {
+    opacity: 0;
 }

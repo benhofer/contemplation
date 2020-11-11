@@ -14,6 +14,7 @@ import {
   Switch,
   Route, NavLink
 } from "react-router-dom";
+import cross from './assets/img/cross.svg';
 
 function App() {
   const [stateClass, setStateClass] = useState('');
@@ -29,38 +30,42 @@ function App() {
                   <header className={`${styles.header} app-header`}> 
                     <NavLink 
                       to="/meditations"
-                      onMouseEnter={() => { setLinkClass('meditation')}} 
+                      onMouseEnter={() => { setLinkClass('press meditation')}} 
                       onMouseLeave={() => { setLinkClass('')}}
                       onClick={()=>{setStateClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink>
-                    <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                    <h1><NavLink to="/" onClick={() => {setStateClass(''); setPageClass(''); setLinkClass('')}}>TEMPORA</NavLink></h1>                   
                     <NavLink to="/contribute" 
-                        onMouseEnter={() => { setLinkClass('contribute')}} 
+                        onMouseEnter={() => { setLinkClass('press contribute')}} 
                         onMouseLeave={() => { setLinkClass('')}}
                         onClick={()=>{setStateClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink>
-                    
                   </header> 
-                  <div className="main">
-                  <Switch>        
-                    <Route path="/prayers">
-                      <Prayer />
-                    </Route>
-                    <Route path="/meditations">
-                      <Meditations />
-                    </Route>
-                    <Route path="/liturgy">
-                      <Liturgy />
-                    </Route>
-                    <Route path="/contribute">
-                      <Contribute />
-                    </Route>
-                    <Route path="/about">
-                      <About />
-                    </Route>
-                    <Route path="/">
-                    </Route>
-                  </Switch>
+
+                  <div className='images'>
+                    <img src={cross} alt="the cross" width='100px' />
                   </div>
-                </Router>
+
+                  <div className="main">
+                    <Switch>        
+                      <Route path="/prayers">
+                        <Prayer />
+                      </Route>
+                      <Route path="/meditations">
+                        <Meditations />
+                      </Route>
+                      <Route path="/liturgy">
+                        <Liturgy />
+                      </Route>
+                      <Route path="/contribute">
+                        <Contribute />
+                      </Route>
+                      <Route path="/about">
+                        <About />
+                      </Route>
+                      <Route path="/">
+                      </Route>
+                    </Switch>
+                    </div>
+                  </Router>
               </div>
               <footer className={`${styles.footer} page-footer`}>
                 <small>O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:33</i></small>
