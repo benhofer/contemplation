@@ -1,313 +1,408 @@
-[{
-
-    "name": "Evagrius Ponticus",
-
-    "info": "Information Placeholder",
-
-    "works": [{
-
-        "name": "On Prayer",
-
-        "info": "Work Info Placeholder",
-
-        "sections": [{
-
-            "number": "1",
-
+{  
+    "original_works": {
+        "on_prayer": {
+            "name": "On Prayer",
+            "description": "",
+            "attribution": "e_ponticus",
+            "color": "yellow"
+        }, 
+        "esv_bible": {
+            "name": "ESV Bible", 
+            "description": "The English Standard Version (ESV) is an English translation of the Bible. It was first published in 2001 by Crossway. ... The ESV adheres to an \"essentially literal\" translation philosophy, taking into account the differences of grammar, syntax, and idiom between current literary English and the original text.",
+            "attribution": "canon_of_scripture",
+            "color": "green"
+        },
+        "philippians_4": {
+            "name": "Philippians 4",
+            "description": "",
+            "attribution": "canon_of_scripture",
+            "color": "green"
+        }
+    }, 
+    // "collections": {
+    //     "a_house_for_my_name": {
+    //         "name": "A House for My Name", 
+    //         "description": "The best stories subtly weave themes and characters and symbols into a stunning final tapestry. This Old Testament survey, written for family and classroom reading, reveals the rich weave that makes Scripture the Story of stories.",
+    //         "curator": "Peter Leithart",
+    //         "color": "purple",
+    //         "meditations": []
+    //     },
+    //     "a_fragant_offering": {
+    //         "name": "A Fragrant Offering",
+    //         "description": "",
+    //         "curator": "Benjamin Hofer",
+    //         "color": "red",
+    //         "meditations": []
+    //     },
+    //     "developing_true_love": {
+    //         "name": "Developing True Love",
+    //         "description": "The word love is one of the most commonly used words in our English vocabulary. Almost everyone would agree that love is one of the most important qualities of human life. We are told, \"Love makes the world go round,\" and ,\"What the world needs now is love, sweet love.\" Without love, life becomes unbearable, relationships deteriorate, marriages fall apart, families disintegrate, and personal problems become overwhelming.",
+    //         "curator": "Wayne A. Mack",
+    //         "color": "red",
+    //         "meditations": []
+    //     }
+    // },
+    "attribution": {
+        "e_ponticus" : {
+            "name": "Evagrius Ponticus",
+            "bio": "Evagrius Ponticus (Greek: Εὐάγριος ὁ Ποντικός, \"Evagrius of Pontus\"; Georgian: ევაგრე ქართველი), also called Evagrius the Solitary (345–399 AD), was a Christian monk and ascetic. One of the most influential theologians in the late fourth-century church, he was well known as a thinker, polished speaker, and gifted writer. He left a promising ecclesiastical career in Constantinople and traveled to Jerusalem, where in 383 he became a monk at the monastery of Rufinus and Melania the Elder. He then went to Egypt and spent the remaining years of his life in Nitria and Kellia, marked by years of asceticism and writing. He was a disciple of several influential contemporary church leaders, including Basil of Caesarea, Gregory of Nazianzus, and Macarius of Egypt. He was a teacher of others, including John Cassian and Palladius of Galatia.",
+            "bio_link": "https://en.wikipedia.org/wiki/Evagrius_Ponticus"
+        },  
+        "canon_of_scripture": {
+            "name": "Canon of Scripture",
+            "short_desc": "The biblical canon is the collection of scriptural books that God has given his corporate people. These books were grouped together by God’s people relatively early, with the OT being settled and stable by the birth of Jesus at latest, and the NT gaining large agreement even before the end of the second century. Although it wasn’t until the fourth century that the NT canon was officially decided, there is good reason to have historical confidence in the process. These books were largely decided on by virtue of three factors: their divine qualities, reception by the churches, and connection to an apostle. Most of the NT books were composed directly by one of the apostles (including Paul), and those that were not have close links to the testimony of the apostles themselves. &mdash; The Gospel Coalition" ,
+            "short_desc_link": "https://www.thegospelcoalition.org/essay/the-biblical-canon/"
+        }
+    },
+    "verses": [
+        {
+            "text": "In the beginning, God created the heavens and the earth.",
+            "url": "https://www.esv.org/Genesis+1/",
+            "short_desc": "Genesis 1:1",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering"
+            ]
+        },{
+            "text": "The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters.",
+            "url": "https://www.esv.org/Genesis+1/",
+            "short_desc": "Genesis 1:2",
+            "original_work": "esv_bible", 
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering"
+            ]
+        },{
+            "text": "In the course of time Cain brought to the LORD an offering of the fruit of the ground.",
+            "url": "https://www.esv.org/Genesis+3/",
+            "short_desc": "Genesis 1:1",
+            "original_work": "esv_bible", 
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering"
+            ]
+        },{
+            "text": "and Abel also brought of the firstborn of his flock and of their fat portions. And the Lord had regard for Abel and his offering.",
+            "url": "https://www.esv.org/Genesis+3/",
+            "short_desc": "Genesis 1:1",
+            "original_work": "esv_bible", 
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering"
+            ]
+        },{
+            "text": "And he said to him, “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself.",
+            "url": "https://www.biblegateway.com/passage/?search=Matthew+22%3A37-39&version=ESV",
+            "short_desc": "Matthew 22:37-39", 
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering",
+                "developing_true_love"
+            ]
+        },{
+            "text": "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. 35 By this all people will know that you are my disciples, if you have love for one another.",
+            "url": "https://www.biblegateway.com/passage/?search=John+13%3A34-35&version=ESV",
+            "short_desc": "John 13:35-35", 
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering",
+                "developing_true_love"
+            ]
+        },{
+            "text": "But I say to you who hear, Love your enemies, do good to those who hate you, bless those who curse you, pray for those who abuse you.",
+            "url": "https://www.biblegateway.com/passage/?search=Luke+6%3A27-28&version=ESV",
+            "short_desc": "Luke 6:27-28",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "a_fragrant_offering",
+                "developing_true_love"
+            ]
+        },{
+            "text": "Husbands, love your wives, as Christ loved the church and gave himself up for her",
+            "url": "https://www.biblegateway.com/passage/?search=ephesians+5%3A25&version=ESV",
+            "short_desc": "Ephesians 5:25",
+            "original_work": "esv_bible",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "Older women likewise are to be reverent in behavior, not slanderers or slaves to much wine. They are to teach what is good, and so train the young women to love their husbands and children",
+            "url": "https://www.biblegateway.com/passage/?search=titus+2%3A3-4&version=ESV",
+            "short_desc": "Titus 2:3-4",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "and hope does not put us to shame, because God's love has been poured into our hearts through the Holy Spirit who has been given to us.",
+            "url": "https://www.biblegateway.com/passage/?search=Romans+5%3A5&version=ESV",
+            "short_desc": "Romans 5:5",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.",
+            "url": "https://www.biblegateway.com/passage/?search=Galatians+5%3A22-23&version=ESV",
+            "short_desc": "Galatians 5:22-23",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "for God gave us a spirit not of fear but of power and love and self-control.",
+            "url": "https://www.biblegateway.com/passage/?search=2+timothy+1%3A7&version=ESV",
+            "short_desc": "2 Timothy 1:7",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "Beloved, let us love one another, for love is from God, and whoever loves has been born of God and knows God.",
+            "url": "https://www.biblegateway.com/passage/?search=1+john+4%3A7&version=ESV",
+            "short_desc": "1 John 4:7",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "But love your enemies, and do good, and lend, expecting nothing in return, and your reward will be great, and you will be sons of the Most High, for he is kind to the ungrateful and the evil.",
+            "url": "https://www.biblegateway.com/passage/?search=Luke+6%3A35&version=ESV",
+            "short_desc": "Luke 6:35",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },{
+            "text": "If I speak in the tongues of men and of angels, but have not love, I am a noisy gong or a clanging cymbal. 2 And if I have prophetic powers, and understand all mysteries and all knowledge, and if I have all faith, so as to remove mountains, but have not love, I am nothing. 3 If I give away all I have, and if I deliver up my body to be burned,[a] but have not love, I gain nothing. 4 Love is patient and kind; love does not envy or boast; it is not arrogant 5 or rude. It does not insist on its own way; it is not irritable or resentful;[b] 6 it does not rejoice at wrongdoing, but rejoices with the truth. 7 Love bears all things, believes all things, hopes all things, endures all things.            8 Love never ends. As for prophecies, they will pass away; as for tongues, they will cease; as for knowledge, it will pass away. 9 For we know in part and we prophesy in part, 10 but when the perfect comes, the partial will pass away. 11 When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways. 12 For now we see in a mirror dimly, but then face to face. Now I know in part; then I shall know fully, even as I have been fully known. 13 So now faith, hope, and love abide, these three; but the greatest of these is love.",
+            "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+13&version=ESV",
+            "short_desc": "1 Corinthians 13",
+            "original_work": "esv_bible",
+            "attribution": "canon_of_scripture",
+            "collections": [
+                "developing_true_love"
+            ]
+        },
+        {
             "text": "If you wish to prepare a “fragrant offering,” you should combine in equal measure diaphanous frankincense, cassia, the aroma onyx, and myrrh, just as the law requires— these are the four virtues. For when these are perfected and present in equal measure, your mind will not be betrayed to the enemy.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.001.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.001.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer",
+            "collections": []
         }, {
-
-            "number": "2",
-
             "text": "A soul purified through the fullness of the virtues makes the rule of the mind in the body and soul secure, thereby making it receptive to the state that it seeks.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.002.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.002.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-           "number": "3",
-
             "text": "Prayer is the mind’s conversation with God. If the mind is going to be able to direct itself without distraction towards its Lord and converse with him directly, what state it must receive!",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.003.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.003.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "4",
-
             "text": "If in trying to approach an earthly burning bush Moses is prevented from coming close until he “removes his sandals from his feet,” how could you, who wish to see and converse with the One who is beyond all perception and concept, not remove every compulsive thought? ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.004.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.004.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "5",
-
             "text": "Persist first in prayer to receive tears, so that through this grief you can tame the wildness that resides in your soul and so that by “testifying against yourself of your lawlessness to the Lord” you obtain from him release.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.005.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.005.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "6",
-
             "text": "Use tears to correct every request, as the Lord takes great delight in receiving a prayer born of tears.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.006.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.006.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "7",
-
             "text": "Even if you pour out streams of tears in your prayer, you should *never* become conceited, as though you were superior to others. After all, your prayer has simply received additional support so that through tears you can more freely confess your sins and find reconciliation with God. Therefore, do not turn into a compulsion what should be a fortress against compulsion. Otherwise you’ll anger further the One who has bestowed on you this gift.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.007.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.007.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "8",
-
             "text": "While weeping for their sins many people forget the point of tears and get all turned around in their madness.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.008.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.008.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "9",
-
             "text": "Stand with diligence, persist in prayer with resolution, and continually turn away the attacks of cares and worrying thoughts. These vex and throng about you to sap away your resolution.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.009.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.009.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "10",
-
             "text": "When demons see you desiring truly to carry out your prayer, they suggest thoughts of various tasks that seem necessary and soon stir up your memory about them, thereby moving the mind to seek after them. When it doesn’t find them, it gets upset and loses heart. When it then stands for prayer, they remind it of memories and these objects of seeking, so that the mind goes slack for this knowledge and loses the prayer that is truly fruitful. ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.010.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.010.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "11",
-
             "text": "Strive to have your mind stand deaf and speechless at the time of prayer, and you will be able to pray.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.011.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.011.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "12",
-
             "text": "Whenever a temptation comes your way or a dispute incites you to release your anger in revenge or shout some unfitting word, recall your prayer and the clarity of discernment you have during it. At once, the uncontrolled emotion within you will cease.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.012.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.012.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "13",
-
             "text": "Whatever you do to avenge yourself against a brother who has treated you wrongly will become a hurdle to you in the time of prayer.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.013.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.013.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "14",
-
             "text": "Prayer is rooted in gentleness and the lack of anger.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.014.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.014.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "15",
-
             "text": "Prayer is the the leafy growth of joy and thanksgiving.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.015.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.015.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "16",
-
             "text": "Prayer is a guard against grief and despondency.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.016.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.016.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "17",
-
             "text": "Go, sell your possessions, and give them to the poor. Then take up your cross and deny yourself so that you can carry out your prayer without distraction.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.017.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.017.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "18",
-
             "text": "If you want to carry out your prayer in a laudable way, deny yourself hour by hour, and bear philosophically all manner of terrible things for the sake of prayer.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.018.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.018.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "19",
-
             "text": "Whenever you withstand hardship philosophically, you will find the fruit of this at the time of prayer.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.019.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.019.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "20",
-
             "text": "If you wish to pray as you ought, do not cause grief to any soul. Otherwise you are running in vain.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.020.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.020.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "21",
-
             "text": "He says, “Leave your gift before the altar, go, and first be reconciled to your brother.” Then when you come back you will pray without disturbance. For during prayer a grudge will mar the ruling faculty of the mind and cast a shadow over your prayers.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.021.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.021.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "22",
-
             "text": "Those who sweep up grudges and grief for themselves while thinking that they are praying are like those who draw water into a jar with holes.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.022.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.022.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "23",
-
             "text": "If you are patient, you will always pray with joy.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.023.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.023.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "24",
-
             "text": "While you are praying as you ought, situations will come to mind where you will think that you are entirely justified in using anger. Yet quite simply, there is no justified anger against your neighbor. For if you examine the situation, you'll find that it is possible for it to be resolved well even without anger. So use every means at your disposal not to break out in anger.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.024.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.024.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "25",
-
             "text": "See to it that while you think you are curing another you do not become incurable yourself and cut off the growth of your prayer.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.025.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.025.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "26",
-
             "text": "By being sparing with anger you will find yourself spared. You will show yourself to be prudent and will be counted among those who truly pray.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.026.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.026.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "27",
-
             "text": "As you are defending yourself against anger, you should never give into lust. For lust provides fuel to anger, which in turn disturbs the eye of the mind and ruins the state of prayer.",
-
-           "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.027.mp3"
-
+           "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.027.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "28",
-
             "text": "Do not go about your prayer only by external postures. Instead, continually direct your mind with great reverence to an awareness of spiritual prayer.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.028.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.028.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "29",
-
             "text": "Sometimes when you stand for prayer you will immediately pray well. Other times, you won't obtain your aim even after striving hard. This is so that you will seek still further. Then, once you obtain it, you will hold this virtue inviolately. ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.029.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.029.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "30",
-
             "text": "When an angel is present, all those that besiege us depart at once and the mind finds itself much relaxed and praying in a healthy way. But other times the normal battle takes place, and the mind fights and refuses to relax, because it is stirred up by various compulsions. And yet, when it searches further, it will find what it seeks, for to the “one who knocks vigorously, the door will be opened.”  ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.030.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.030.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer" ,
+            "collections": []
         }, {
-
-            "number": "31",
-
             "text": "Do not go on praying that your own desires come to pass, since they do not cohere perfectly with the desire of God. Instead, pray persistently as you have learned, “thy will be done in me.” In every endeavor, pray this way, so that his will would be done. After all, he desires what is good and beneficial for your soul. But quite often you do not pursue this.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.031.mp3"
-
-        }]
-
-    }]
-
-}, {
-
-    "name": "St. Paul",
-
-    "info": "Information Placeholder",
-
-    "works": [{
-
-        "name": "Philippians 4",
-
-        "info": "Work Info Placeholder",
-
-        "sections": [{
-
-            "number": "4",
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/evagrius.onprayer.031.mp3",
+            "attribution": "e_ponticus",
+            "original_work": "on_prayer",
+            "collections": []
+        },{
             "text": "Take delight in the Lord always; I will say it again: take delight!",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.4.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.4.mp3",
+            "attribution": "canon_of_scripture",
+            "original_work": "philippians_4",
+            "collections": []
         }, {
-
-            "number": "5",
-
             "text": "Show gentleness to all people. Our Lord is close by.",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.5.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.5.mp3",
+            "attribution": "canon_of_scripture",
+            "original_work": "philippians_4",
+            "collections": []
         }, {
-
-            "number": "6",
-
             "text": "Do not continue in anxious worrying. Instead, at all moments, present through prayer and petition your requests to God, and do this with gratitude. ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.6.mp3"
-
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.6.mp3",
+            "attribution": "canon_of_scripture",
+            "original_work": "philippians_4",
+            "collections": []
         }, {
-
-            "number": "7",
-
-            "text": "Then God’s peace, which transcends every created mind mind, will protect, though Jesus Christ, your hearts and their thoughts. ",
-
-            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.7.mp3"
-
-        }]
-
-    }]
-
-}]
+            "text": "Then God’s peace, which transcends every created mind, will protect, though Jesus Christ, your hearts and their thoughts.",
+            "url": "https://s3.amazonaws.com/tempora-pray-web-bucket/audio/paul.philippians.4.7.mp3",
+            "attribution": "canon_of_scripture",
+            "original_work": "philippians_4",
+            "collections": []
+        }
+    ]
+}
