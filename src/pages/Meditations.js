@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../components/Card';
 
-function Prayer() {
+function Meditations() {
   let items = [];
 
   for (let i = 1; i <= 16; i++ ) {
@@ -21,4 +21,4 @@ function Prayer() {
     )
 }
 
-export default Prayer; 
+export default Meditations; 

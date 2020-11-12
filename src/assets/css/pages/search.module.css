@@ -52,6 +52,7 @@
     background: rgba(255,255,255,0);
     border: none;
     width: 5rem;
+    padding: 1rem 0 1rem 1rem;
     color: rgba(255,255,255,.5);
 }
 

@@ -45,11 +45,11 @@ function Search (props) {
         <div className={`${styles.search_form}`}>
           <label for="search" className="sr-only">Search Meditations</label>
           <div className={`${styles.primary_search} ${inputFocus ? styles.search_active : ''}`}>
-            <input type="text" placeholder='Search Meditations' onFocus={()=>{setInputFocus(true)}} onBlur={()=>{setInputFocus(false)}} />
-            <button className={`${styles.search_btn}`}>
+            <input type="text" placeholder='Search' onFocus={()=>{setInputFocus(true)}} onBlur={()=>{setInputFocus(false)}} />
+            <NavLink to="/meditations" className={`${styles.search_btn}`}>
               <Icon icon={roundSearch} style={{fontSize: '2rem'}} /> 
               <span class="sr-only">Search</span>
-            </button>
+            </NavLink>
           </div>
         </div>
         <div className={`${styles.browse_links}`}>
@@ -59,16 +59,16 @@ function Search (props) {
           <h1 className={`${styles.browse_heading}`}>
             <i>Browse By</i>
           </h1>
-          <NavLink to="/attribution" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations" className={`${styles.browse_link}`}>
             Author
           </NavLink>
-          <NavLink to="/genre" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations" className={`${styles.browse_link}`}>
             Genre
           </NavLink>
-          <NavLink to="/keyword" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations" className={`${styles.browse_link}`}>
             Keyword
           </NavLink>
-          <NavLink to="/mood" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations" className={`${styles.browse_link}`}>
             Mood
           </NavLink>
           {/* <NavLink to="/season" className={`${styles.browse_link}`}>

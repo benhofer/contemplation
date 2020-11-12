@@ -97,13 +97,13 @@ body:hover, body:focus
     opacity: 1;
 }
 
-.main-nav, .page-footer {
+.main-nav, .sub-footer {
     opacity: 0;
     transition: opacity 2s;
 }
 
 body:hover .main-nav, body:focus .main-nav,
-body:hover .page-footer, body:focus .page-footer {
+body:hover .sub-footer, body:focus .sub-footer {
     opacity: 1; 
 }
 

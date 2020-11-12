@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Search from './pages/Search';
+import Meditations from './pages/Meditations';
 import styles from './assets/css/pages/app.module.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
@@ -37,18 +38,20 @@ function App() {
                         onMouseLeave={() => { setLinkClass('')}}
                         onClick={()=>{setPageClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink> */}
                   </header> 
-                    <div className="images" 
-                    onMouseEnter={() => initPage()}
-                    >
+                    <div className="images" onMouseEnter={() => initPage()}>
                         <img src={cross} alt="the cross" width='100px' onClick={() => {setLinkClass('clicked')}} />
                     </div>
                   
                   <div className="main">
-                    <Search />
+                   
                     <Switch>        
-                      <Route path="/prayers">
+                      <Route path="/meditations">
+                        <Meditations />
+                      </Route>
+                      <Route exact path="/">
                         <Search />
                       </Route>
+                      
                       {/* <Route path="/liturgy">
                         <Liturgy />
                       </Route>
@@ -67,7 +70,7 @@ function App() {
               <footer className={`${styles.footer} page-footer`}>
                 <small>O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></small>
                   {/* { pageClass === "engaged" &&  */}
-                    <div className={styles.sub_footer}> 
+                    <div className={`${styles.sub_footer} sub-footer`}> 
                       <nav>
                           <a href>About</a>
                           <a href>Contribute</a>
