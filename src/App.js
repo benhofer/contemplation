@@ -21,10 +21,10 @@ function App() {
   const initPage = () => {window.setTimeout(() => {setLinkClass('press'); setPageClass('blue')}, 997)};
   
   return (
-      <div className={`solid container ${pageClass} ${linkClass} ${colorClass}`}>
-        <div className="gradient wrapper">
+      <div className={`solid main-container ${pageClass} ${linkClass} ${colorClass}`}>
+        <div className="gradient main-wrapper">
           <div className="solid inner">
-              <div className="content">
+              <div className="main-content">
                 <Router>
                   <header className={`${styles.header} app-header`}> 
                     {/* <NavLink 

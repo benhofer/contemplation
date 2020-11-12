@@ -1,0 +1,113 @@
+
+  
+   .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: "Lato";
+   }
+  
+   button {
+     font-family: "Lato"
+   }
+  
+   p, a, .body1, .body2, .subtitle1, .subtitle2, button, .u-button,
+   .overline, caption, .u-caption, small, .u-small {
+    color: white;
+   }
+  
+   p, a, .body1, li {
+     font-size: 14px;
+     margin-bottom: 10px;
+     line-height: 22px;
+   }
+  
+  a {
+    text-decoration: none;
+    color:#b0d5f8;  
+  }
+
+  a:hover, a:focus {
+    text-decoration: none;
+    color:  #4679bb;      
+  }
+
+  a:active, a:visited { 
+    color: #dce7fa;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      text-decoration: none;
+      color: #4679bb;    
+    }
+  }
+  
+    h1, .u-h1 {
+      font-size: 96px;
+    }
+    h2, .u-h2 {
+      font-size: 60px;
+    }
+    h3, .u-h3 {
+      font-size: 45px;
+    }
+    h4 , .u-h4 {
+      font-size: 32px;
+    }
+    h5, .u-h5 {
+      font-size: 21px;
+    }
+    h6, .u-h6 {
+      font-size: 17px;
+    }
+  
+    .body2 {
+      font-size: 14px
+    }
+    .subtitle1 {
+      font-size: 18px;
+      margin-bottom: 7px;
+      line-height: 30px;
+    }
+    .subtitle2 {
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: medium
+    }
+    button, .u-button {
+      font-size: 14px
+    }
+    .overline {
+      font-size: 10px
+    }
+    caption, .u-caption {
+      font-size: 11px
+    }
+  
+    small, .u-small {
+      font-size: 11px;
+    }
+  
+    @media screen and (max-width: 1080px) {
+      h1, .u-h1 {
+        font-size: 64px;
+      }
+      h1, .u-h2 {
+        font-size: 48px;
+      }
+      h3, .u-h3 {
+        font-size: 40px;
+      }
+      h4 , .u-h4 {
+        font-size: 32px;
+      }
+      h5, .u-h5 {
+        font-size: 21px;
+      }
+      h6, .u-h6 {
+        font-size: 17px;
+      }
+    }

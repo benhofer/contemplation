@@ -34,53 +34,53 @@ body:hover, body:focus
     opacity: 0;
 }
 
-.wrapper {
+.main-wrapper {
    background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
 }
 
 /* Nav Hover */
-.container.press .inner {
+.main-container.press .inner {
     background-color: rgba(11, 23, 55, .25);
 }
 
 /* Link Hovers */
-.container.press.purple .inner {
+.main-container.press.purple .inner {
     background-color: rgba(77, 1, 77, .12);
 }
 
-.container.press.blue .inner {
+.main-container.press.blue .inner {
     background-color: rgba(11, 23, 55, .33);
 }
 
-.container.press.gold .inner {
+.main-container.press.gold .inner {
     background-color: rgba(237, 188, 1, 0.08);
 }
 
-.container.press.red .inner {
+.main-container.press.red .inner {
     background-color: rgba(100, 30, 10, 0.18);
 }
 
-.container.press.black .inner {
+.main-container.press.black .inner {
     background-color: rgba(3, 1, 6, 0.13);
 }
 
-.container.engaged.purple {
+.main-container.engaged.purple {
     background-color: rgba(77, 1, 77, .33);
 }
 
-.container.engaged.blue {
+.main-container.engaged.blue {
     background-color: rgba(11, 23, 55, .44);
 }
 
-.container.engaged.gold {
+.main-container.engaged.gold {
     background-color: rgba(237, 188, 1, 0.12);
 }
 
-.container.engaged.red, .container.clicked.red {
+.main-container.engaged.red, .main-container.clicked.red {
     background-color: rgba(100, 30, 10, 0.26);
 }
 
-.container.engaged .inner {
+.main-container.engaged .inner {
     background-color: none;
 }
 
