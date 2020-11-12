@@ -4,6 +4,8 @@ import Meditations from './pages/Meditations';
 import styles from './assets/css/pages/app.module.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
+import './assets/css/utilities/util.css';
+import './assets/css/objects/objects.css';
 import Contribute from './pages/Contribute';
 import About from './pages/About';
 import {
