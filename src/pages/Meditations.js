@@ -13,54 +13,33 @@ function Meditation(props) {
   const [cardmm, setCardmm] = useState([0,4])
   const [currRow, setCurrRow] = useState(0);
 
-  useEffect(() => {
-    let catalog;
-      axios.get(API_URL)
-        .then((response) => {
-          catalog = response.data;
-          let newStructure = [];
-          catalog.original_works.map(work => {
-            let newWork = [{...work},[]];
-            work.verses.map(id => {
-              newWork[1].push(catalog.verses.filter(verse => verse.id === id)[0])
-            }) 
-            console.log(newWork)
-            newStructure.push(newWork);
-          })
-          console.log(newStructure)
-          setMeditations(newStructure);
-        })
-        .catch((e) => {
-          console.log(e)
-        })
-  },[]);
+  // useEffect(() => {
+  //   let catalog;
+  //     axios.get(API_URL)
+  //       .then((response) => {
+  //         catalog = response.data;
+  //         let newStructure = [];
+  //         catalog.original_works.map(work => {
+  //           let newWork = [{...work},[]];
+  //           work.verses.map(id => {
+  //             newWork[1].push(catalog.verses.filter(verse => verse.id === id)[0])
+  //           }) 
+  //           console.log(newWork)
+  //           newStructure.push(newWork);
+  //         })
+  //         console.log(newStructure)
+  //         setMeditations(newStructure);
+  //       })
+  //       .catch((e) => {
+  //         console.log(e)
+  //       })
+  // },[]);
 
-  const rowsLeft = (i) => {
-    setCardmm(mm => [mm[0]-i, mm[1]-i])
-  }
-
-  const rowsRight = (i) => {
-    setCardmm(mm => [mm[0]+i, mm[1]+i])
-  }
-
-  const rowsUp = (i) => {
-    console.log('before', currRow)
-    setCurrRow(c => c-i)
-    setCardmm([0,4])
-    console.log('after', currRow)
-  }
-
-  const rowsDown = (i) => {
-    console.log('before', currRow)
-    setCurrRow(c => c+i)
-    setCardmm([0,4])
-    console.log('after', currRow)    
-  }
   
   return (
     <div className='main-content'>
         <div className="rows">
-          { meditations && meditations.map((m,i) => (
+          {/* { meditations && meditations.map((m,i) => (
               <div className="row" key={'row-'+i}>
                   { 
                     m.map((n,j) => (
@@ -69,7 +48,7 @@ function Meditation(props) {
                   }
               </div>
             )
-          )}
+          )} */}
         
         </div>
       </div>
