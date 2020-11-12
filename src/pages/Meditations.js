@@ -38,7 +38,100 @@ function Meditation(props) {
   
   return (
     <div className='main-content'>
-        <div className="rows">
+      <div className="wrapper">
+        <section className="o-section">
+          <div className="row">
+            <div className="col-md-3">
+              <Card title='Evagrius Ponticus' text='Evagrius Ponticus (Greek: Εὐάγριος ὁ Ποντικός, \"Evagrius of Pontus\"; Georgian: ევაგრე ქართველი), also called Evagrius the Solitary (345–399 AD), was a Christian monk and ascetic. One of the most influential theologians in the late fourth-century church, he was well known as a thinker, polished speaker, and gifted writer. He left a promising ecclesiastical career in Constantinople and traveled to Jerusalem, where in 383 he became a monk at the monastery of Rufinus and Melania the Elder. He then went to Egypt and spent the remaining years of his life in Nitria and Kellia, marked by years of asceticism and writing. He was a disciple of several influential contemporary church leaders, including Basil of Caesarea, Gregory of Nazianzus, and Macarius of Egypt. He was a teacher of others, including John Cassian and Palladius of Galatia.' />
+            </div>
+            <div className="col-md-9">
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="o-section">
+          <div className="row">
+            <div className="col-md-3">
+              <Card title='St Paul' text='The biblical canon is the collection of scriptural books that God has given his corporate people. These books were grouped together by God’s people relatively early, with the OT being settled and stable by the birth of Jesus at latest, and the NT gaining large agreement even before the end of the second century. Although it wasn’t until the fourth century that the NT canon was officially decided, there is good reason to have historical confidence in the process. These books were largely decided on by virtue of three factors: their divine qualities, reception by the churches, and connection to an apostle. Most of the NT books were composed directly by one of the apostles (including Paul), and those that were not have close links to the testimony of the apostles themselves. &mdash; The Gospel Coalition' />
+            </div>
+            <div className="col-md-9">
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+
+      </div>
+
+        
+
+
           {/* { meditations && meditations.map((m,i) => (
               <div className="row" key={'row-'+i}>
                   { 
@@ -50,7 +143,7 @@ function Meditation(props) {
             )
           )} */}
         
-        </div>
+      
       </div>
     )
 }
