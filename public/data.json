@@ -6,54 +6,52 @@
             "description": "",
             "attribution": "e_ponticus",
             "color": "yellow",
-            "verses": [
+            "works": [
                 15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46
             ]
-        },
-        {
+        },{
             "id": "esv_bible",
             "name": "ESV Bible", 
             "description": "The English Standard Version (ESV) is an English translation of the Bible. It was first published in 2001 by Crossway. ... The ESV adheres to an \"essentially literal\" translation philosophy, taking into account the differences of grammar, syntax, and idiom between current literary English and the original text.",
             "attribution": "canon_of_scripture",
             "color": "green",
-            "verses": [
+            "works": [
                 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
             ]
-        },
-         {
+        },{
             "id": "philippians_4",
             "name": "Philippians 4",
             "description": "",
             "attribution": "canon_of_scripture",
             "color": "green",
-            "verses": [
+            "works": [
                 47,48,49,50
             ]
         }
     ],
-    // "collections": {
-    //     "a_house_for_my_name": {
-    //         "name": "A House for My Name", 
-    //         "description": "The best stories subtly weave themes and characters and symbols into a stunning final tapestry. This Old Testament survey, written for family and classroom reading, reveals the rich weave that makes Scripture the Story of stories.",
-    //         "curator": "Peter Leithart",
-    //         "color": "purple",
-    //         "meditations": []
-    //     },
-    //     "a_fragant_offering": {
-    //         "name": "A Fragrant Offering",
-    //         "description": "",
-    //         "curator": "Benjamin Hofer",
-    //         "color": "red",
-    //         "meditations": []
-    //     },
-    //     "developing_true_love": {
-    //         "name": "Developing True Love",
-    //         "description": "The word love is one of the most commonly used words in our English vocabulary. Almost everyone would agree that love is one of the most important qualities of human life. We are told, \"Love makes the world go round,\" and ,\"What the world needs now is love, sweet love.\" Without love, life becomes unbearable, relationships deteriorate, marriages fall apart, families disintegrate, and personal problems become overwhelming.",
-    //         "curator": "Wayne A. Mack",
-    //         "color": "red",
-    //         "meditations": []
-    //     }
-    // },
+    "collections": {
+        "a_house_for_my_name": {
+            "name": "A House for My Name", 
+            "description": "The best stories subtly weave themes and characters and symbols into a stunning final tapestry. This Old Testament survey, written for family and classroom reading, reveals the rich weave that makes Scripture the Story of stories.",
+            "curator": "Peter Leithart",
+            "color": "purple",
+            "meditations": []
+        },
+        "a_fragant_offering": {
+            "name": "A Fragrant Offering",
+            "description": "",
+            "curator": "Benjamin Hofer",
+            "color": "red",
+            "meditations": []
+        },
+        "developing_true_love": {
+            "name": "Developing True Love",
+            "description": "The word love is one of the most commonly used words in our English vocabulary. Almost everyone would agree that love is one of the most important qualities of human life. We are told, \"Love makes the world go round,\" and ,\"What the world needs now is love, sweet love.\" Without love, life becomes unbearable, relationships deteriorate, marriages fall apart, families disintegrate, and personal problems become overwhelming.",
+            "curator": "Wayne A. Mack",
+            "color": "red",
+            "meditations": []
+        }
+    },
     "attribution": {
         "e_ponticus" : {
             "name": "Evagrius Ponticus",
@@ -66,7 +64,7 @@
             "short_desc_link": "https://www.thegospelcoalition.org/essay/the-biblical-canon/"
         }
     },
-    "verses": [
+    "works": [
         {
             "id": 0,
             "text": "In the beginning, God created the heavens and the earth.",
