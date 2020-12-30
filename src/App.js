@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Search from './pages/Search';
 import Meditations from './pages/Meditations';
 import styles from './assets/css/pages/app.module.css';
@@ -20,71 +20,60 @@ function App() {
   const [linkClass, setLinkClass] = useState('');
   const [colorClass, setColorClass] = useState('');
 
-  const initPage = () => {window.setTimeout(() => {setLinkClass('press'); setPageClass('blue')}, 997)};
-  
+  const initPage = () => {window.setTimeout(() => {setLinkClass('press'); setPageClass('search')}, 1997)};
+
   return (
-      <div className={`solid main-container ${pageClass} ${linkClass} ${colorClass}`}>
-        <div className="gradient main-wrapper">
-          <div className="solid inner">
-              <div className="main-content">
-                <Router>
-                  <header className={`${styles.header} app-header`}> 
-                    {/* <NavLink 
-                      to="/meditations"
-                      onMouseEnter={() => { setLinkClass('press meditation')}} 
-                      onMouseLeave={() => { setLinkClass('')}}
-                      onClick={()=>{setPageClass('engaged'); setPageClass('meditation-page'); setLinkClass('')}}>Meditations</NavLink> */}
-                    <h1><NavLink to="/" onClick={() => {setPageClass('welcome'); setColorClass(''); setLinkClass('')}}>TEMPORA</NavLink></h1>                   
-                    {/* <NavLink to="/contribute" 
-                        onMouseEnter={() => { setLinkClass('press contribute')}} 
-                        onMouseLeave={() => { setLinkClass('')}}
-                        onClick={()=>{setPageClass('engaged'); setPageClass('contribute-page'); setLinkClass('')}}>Contribute</NavLink> */}
-                  </header> 
-                    <div className="images" onMouseEnter={() => initPage()}>
-                        <img src={cross} alt="the cross" width='100px' onClick={() => {setLinkClass('clicked')}} />
-                    </div>
-                  
-                  <div className="main">
-                   
-                    <Switch>        
-                      <Route path="/meditations">
-                        <Meditations />
-                      </Route>
-                      <Route exact path="/">
-                        <Search />
-                      </Route>
-                      
-                      {/* <Route path="/liturgy">
-                        <Liturgy />
-                      </Route>
-                      <Route path="/contribute">
-                        <Contribute />
-                      </Route>
-                      <Route path="/about">
-                        <About />
-                      </Route>
-                      <Route path="/">
-                      </Route> */}
-                    </Switch>
-                    </div>
-                  </Router>
+      <Fragment>
+        <div id="gels" className={`${colorClass} ${pageClass} ${linkClass}`}>
+          <div className="outermost">
+            <div className="outer">
+              <div className="inner">
+                <div className="innermost">
+                  <img src={cross} alt="the cross" width='100px' />
+                  <small className="sr-only">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></small>
+                </div>
               </div>
-              <footer className={`${styles.footer} page-footer`}>
-                <small>O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></small>
-                  {/* { pageClass === "engaged" &&  */}
-                    <div className={`${styles.sub_footer} sub-footer`}> 
-                      <nav>
-                          <a href>About</a>
-                          <a href>Contribute</a>
-                          <a href>Connect</a>
-                          <a href>Resources</a>
-                      </nav>
-                    </div>
-                   {/* } */}
-              </footer>
+            </div>
           </div>
         </div>
-      </div>
+        <div id="main" className={`${pageClass} ${linkClass} main`} onMouseEnter={() => initPage()}>
+          <Router>
+            <div>
+              <div className="main-content">
+                <Switch>        
+                  <Route path="/meditations">
+                    <div>
+                      <header className={`${styles.header} app-header`} onClick={() => initPage()}> 
+                        <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                      </header>  
+                      <Meditations />
+                    </div>
+                  </Route>
+                  <Route exact path="/">
+                    <div>
+                      <header className={`${styles.header} app-header home`} onClick={() => initPage()}> 
+                        <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                      </header>  
+                      <Search />
+                    </div> 
+                  </Route>
+                </Switch>
+              </div>      
+            </div>         
+          </Router>
+          <div className="push"></div>
+        </div>
+        <footer className={`${styles.footer} page-footer`}>
+          <div className="lower-footer">
+            <nav>
+                <a href>About</a>
+                <a href>Contribute</a>
+                <a href>Connect</a>
+                <a href>Resources</a>
+            </nav>
+          </div>
+        </footer>
+    </Fragment>
   );
 }
 

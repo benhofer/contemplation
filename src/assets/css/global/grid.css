@@ -1,88 +1,75 @@
-
 /* Page Layout */
-html, body {
-    height: 100vh;
-}
-
-.inner {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 100px;
-}
-
 .app-header {
-    cursor: pointer;
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    justify-content: space-evenly;
-    z-index: 1;
+  cursor: pointer;
+  display: flex;
+  z-index: 1;
+  height: 175px;
+  justify-content: left;
+  padding-top: 4rem;
+  padding-left: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.app-header.home {
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-left: 0;
 }
 
 .app-header h1 {
-    line-height: 2rem;
-    margin: 1rem;
+  line-height: 2rem;
+  margin: 1rem;
+  text-align: center;
+  display: block;
+  position: relative;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .75rem;
+  font-weight: 100;
+}
+
+.app-header h1 a {
+  text-decoration: none;
+  color: white;
+  transition: opacity .4s;
+}
+
+.app-header > a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: white;
+  font-weight: 100;
+  transition: opacity .4s; 
+  opacity: 0;
 }
 
 .main {
-    padding: 12rem 0 7rem;
-    height: calc(100vh - 17rem);
-    overflow: auto;
+    min-height: 100%;
     position: relative;
-    z-index: 0;
+    z-index: 2;
+    margin-bottom: -80px;
 }
-
-.main-content {
-    height: calc(100vh - 10rem);
-    display: grid; 
+.push {
+  height: 80px;
 }
-
-.page-footer {
-    padding-top: 1rem;
-    height: 8rem;
-    position: fixed;
-    width: 100vw;
-    bottom: 0;
+.page-footer{  
+  z-index: 2;
+  position: relative;
+  height: 80px;
 }
-
-.container-grid-simple {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    grid-auto-rows: auto;
-    padding: 0 3rem;
+.page-footer nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
-
-.container-grid-hero {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr 2fr 2fr 3fr 3fr 1fr; 
-    grid-template-rows: .5fr auto 3fr;
-    padding: 0 3rem;
-    height: 100%;
+.page-footer nav a {
+  padding: 0 1rem;
+  font-size: smaller;
+  display: block;
+  line-height: 26px;
 }
-
-.hero-text  {
-    grid-column-start: 2;
-    grid-column-end: span 2;
-    grid-row-start: 2; 
-    grid-row-end: span 1;
-    background: lightgray;
-}
-
-.hero-image {
-    grid-column-start: 4; 
-    grid-column-end: span 2;
-    grid-row-start: 2; 
-    grid-row-end: span 1;
-    background: lightgray;
-}
-
-.container-grid-complex {
-    display: grid;
-}
-
 
 /* Flexbox Grid */
 .wrapper {

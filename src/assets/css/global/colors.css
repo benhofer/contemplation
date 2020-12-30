@@ -8,6 +8,32 @@ body {
     background: black;
 }
 
+#gels, #gels div {
+    height: 100vh; 
+    width: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 1;
+    transition: background-color .7s ease-out, opacity .7s ease-out;
+}
+
+#gels.press img, #gels.engaged img {
+    opacity: 0; 
+}
+
+#gels img {
+    width: 100px; 
+    margin: 0 auto;
+    display: block;
+    margin: calc(50vh - 150px) auto;
+}
+
+.meditation-page img {
+    opacity: 0;
+}
+  
+
 html, .solid {
     transition: background-color .6s;
 }
@@ -24,109 +50,75 @@ html, .solid {
     /* press */
     /*  */
 
-body:hover, body:focus
- {
+body:hover, body:focus {
     background-color: #1b1a1c;
     /* background: black; */
 }
 
-.init .images {
-    opacity: 0;
-}
-
-.main-wrapper {
+#gels {
    background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
 }
 
 /* Nav Hover */
-.main-container.press .inner {
+.press .inner {
     background-color: rgba(11, 23, 55, .25);
 }
 
 /* Link Hovers */
-.main-container.press.purple .inner {
+.press.purple .inner {
     background-color: rgba(77, 1, 77, .12);
 }
 
-.main-container.press.blue .inner {
+.press.blue .inner {
     background-color: rgba(11, 23, 55, .33);
 }
 
-.main-container.press.gold .inner {
+.press.gold .inner {
     background-color: rgba(237, 188, 1, 0.08);
 }
 
-.main-container.press.red .inner {
+.press.red .inner {
     background-color: rgba(100, 30, 10, 0.18);
 }
 
-.main-container.press.black .inner {
+.press.black .inner {
     background-color: rgba(3, 1, 6, 0.13);
 }
 
-.main-container.engaged.purple {
+.engaged.purple {
     background-color: rgba(77, 1, 77, .33);
 }
 
-.main-container.engaged.blue {
+.engaged.blue {
     background-color: rgba(11, 23, 55, .44);
 }
 
-.main-container.engaged.gold {
+.engaged.gold {
     background-color: rgba(237, 188, 1, 0.12);
 }
 
-.main-container.engaged.red, .main-container.clicked.red {
+.engaged.red {
     background-color: rgba(100, 30, 10, 0.26);
 }
 
-.main-container.engaged .inner {
+.engaged .inner {
     background-color: none;
 }
 
-.main {
+.main-content {
     opacity: 0;
     transition: opacity 1s ease-in;
 }
 
-.press .main {
+.press .main-content {
     opacity: .75;
 }
 
-.engaged .main  {
+.engaged .main-content  {
     opacity: 1;
-}
-
-.main-nav, .sub-footer {
-    opacity: 0;
-    transition: opacity 2s;
 }
 
 body:hover .main-nav, body:focus .main-nav,
 body:hover .sub-footer, body:focus .sub-footer {
     opacity: 1; 
-}
-
-.images {
-    position: fixed;
-    width: 100%;
-    display:block;
-    transition: opacity .8s ease-out;
-    z-index: 100;
-}
-
-.press .images, .engaged .images {
-    z-index: 0;
-    opacity: 0; 
-}
-
-.images img {
-    width: 100px; 
-    margin: 0 auto;
-    display: block;
-    margin: calc(50vh - 150px) auto;
-}
-
-.meditation-page .images {
-    opacity: 0;
 }

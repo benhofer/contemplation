@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Card from '../components/Card';
 import axios from 'axios';
-
+import {
+  useLocation
+} from "react-router-dom";
 
 const API_URL = "/data.json";
 // const API_URL = "https://mp22l1ux2d.execute-api.us-east-1.amazonaws.com/default/tempora-pray-getcatalog"
@@ -37,7 +39,7 @@ function Meditation(props) {
 
   
   return (
-    <div className='main-content'>
+    <div>
       <div className="wrapper">
         <section className="o-section">
           <div className="row">
@@ -90,35 +92,35 @@ function Meditation(props) {
             <div className="col-md-9">
               <div className="row">
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
-                </div>
-                <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
-                </div>
-                <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
                 <div className="col-md-4">
-                  <Card title='On Prayer' text='short description' url='link to meditation page' color='red' />
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
+                </div>
+                <div className="col-md-4">
+                  <Card title='Philippians 4' text='short description' url='link to meditation page' color='red' />
                 </div>
               </div>
             </div>

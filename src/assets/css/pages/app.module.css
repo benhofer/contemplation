@@ -1,33 +1,4 @@
-.header {
-    justify-content: center;
-    align-items: center;
-    padding-top: 5rem;
-}
 
-.header h1 {
-    text-align: center;
-    display: block;
-    position: relative;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: .75rem;
-    font-weight: 100;
-}
-
-header h1 a {
-    text-decoration: none;
-    color: white;
-    transition: opacity .4s;
-}
-
-.header > a {
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    color: white;
-    font-weight: 100;
-    transition: opacity .4s; 
-    opacity: 0;
-}
 
 body:hover .header a, body:focus .header a {
     opacity: .75;
@@ -40,29 +11,4 @@ body:hover .header a:focus {
 
 .header a.selected {
     border-bottom-color: white;
-}
-
-.footer small {
-    display: block;
-    text-align: center;
-}
-
-.sub_footer {
-    position: absolute;
-    bottom: 18px;
-    width: 100vw;
-    height: 26px;
-}
-
-.sub_footer nav {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.sub_footer nav a {
-    padding: 0 1rem;
-    font-size: smaller;
-    display: block;
-    line-height: 26px;
 }

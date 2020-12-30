@@ -1,8 +1,6 @@
 .search_page {
-    margin: calc(50vh - 12rem - 125px) auto;
-    position: fixed;
-    display: block;
-    width: 100vw;
+    height: calc(100vh - 175px - 80px);
+    padding-top: 25vh;
 }
 
 .search_form, .browse_links {

@@ -1,6 +1,6 @@
 
 .card {
-    opacity: .5;
+    opacity: .75;
     border: 2px solid rgba(255, 255, 255, .2);
     transition: opacity .2s;
     padding: 2rem;
