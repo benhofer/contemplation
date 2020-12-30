@@ -2,9 +2,9 @@
 .app-header {
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   z-index: 1;
   height: 175px;
-  justify-content: left;
   padding-top: 4rem;
   padding-left: 2rem;
   max-width: 1800px;
