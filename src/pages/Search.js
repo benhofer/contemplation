@@ -59,16 +59,16 @@ function Search (props) {
           <h1 className={`${styles.browse_heading}`}>
             <i>Browse By</i>
           </h1>
-          <NavLink to="/meditations" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations?filter=author" className={`${styles.browse_link}`}>
             Author
           </NavLink>
-          <NavLink to="/meditations" className={`${styles.browse_link}`}>
-            Genre
+          <NavLink to="/meditations?filter=collection" className={`${styles.browse_link}`}>
+            Collection
           </NavLink>
-          <NavLink to="/meditations" className={`${styles.browse_link}`}>
-            Keyword
+          <NavLink to="/meditations?filter=work" className={`${styles.browse_link}`}>
+            Work
           </NavLink>
-          <NavLink to="/meditations" className={`${styles.browse_link}`}>
+          <NavLink to="/meditations?filter=mood" className={`${styles.browse_link}`}>
             Mood
           </NavLink>
           {/* <NavLink to="/season" className={`${styles.browse_link}`}>
