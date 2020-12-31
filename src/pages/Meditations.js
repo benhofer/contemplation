@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Card from '../components/Card';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import Meditation from "./Meditation";
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -12,8 +14,8 @@ const API_URL = "/data.json";
 // const API_URL = "https://mp22l1ux2d.execute-api.us-east-1.amazonaws.com/default/tempora-pray-getcatalog"
 // const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
 
-function Meditation(props) {
 
+function Meditations(props) {
   const [meditations, setMeditations] = useState('');
   const [cardmm, setCardmm] = useState([0,4])
   const [currRow, setCurrRow] = useState(0);
@@ -31,7 +33,7 @@ function Meditation(props) {
       // console.log(newWork)
       newStructure.push(newWork);
     })
-    console.info(newStructure)
+    // console.info(newStructure)
     return newStructure; 
   }
 
@@ -42,17 +44,17 @@ function Meditation(props) {
       work.verses.map(id => {
         newWork[1].push(...cat.verses.filter(verse => verse.id === id))
       }) 
-      console.log(newWork)
+      // console.log(newWork)
       newStructure.push(newWork);
     })
-    console.info(newStructure)
+    // console.info(newStructure)
     return newStructure; 
   }
 
   const filterByCollection = (cat) => {
     let newStructure = [];
     cat.collections.map(work => {
-      console.log('work', work)
+      // console.log('work', work)
       let newWork = [{...work},[]];
       work.verses.map(id => {
         newWork[1].push(cat.verses.filter(verse => verse.id === id)[0])
@@ -60,7 +62,7 @@ function Meditation(props) {
       // console.log(newWork)
       newStructure.push(newWork);
     })
-    console.dir(newStructure)
+    // console.dir(newStructure)
     return newStructure; 
   }
 
@@ -85,40 +87,40 @@ function Meditation(props) {
   return (
     <div>
       <div className="wrapper">
-        { meditations && meditations.map(cat => 
-            <section className="o-section">
-              <div className="row">
-                <div className="col-md-3">
-                  <Card title={cat[0].name} text={cat[0].description} />
-                </div>
-                <div className="col-md-9">
-                  <div className="row">
-                    { cat[1].map(verse => 
-                        <div className="col-md-4">
-                          <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
+        <Router>
+          <Switch>
+              <Route path='/meditations/:id'>
+                <Meditation />
+              </Route>
+              <Route path='/meditations'>
+                { meditations && meditations.map(cat => 
+                    <section className="o-section">
+                      <div className="row">
+                        <div className="col-md-3">
+                          <Card title={cat[0].name} text={cat[0].description} />
                         </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-        </div>
-
-          {/* { meditations && meditations.map((m,i) => (
-              <div className="row" key={'row-'+i}>
-                  { 
-                    m.map((n,j) => (
-                      <Card key={'meditation-'+j} title={m[0].author} text={n.text} />
-                    ))
-                  }
-              </div>
-            )
-          )} */}
+                        <div className="col-md-9">
+                          <div className="row">
+                            { cat[1].map(verse => 
+                                <div className="col-md-4">
+                                  <Link to={`/meditations/${verse.id}`}>
+                                    <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
+                                  </Link>
+                                </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  )}
+              </Route>
+             
+          </Switch>
+        </Router>
         
-      
+        </div>
       </div>
     )
 }
 
-export default Meditation; 
+export default Meditations; 

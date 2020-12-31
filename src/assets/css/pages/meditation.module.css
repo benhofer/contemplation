@@ -1,0 +1,10 @@
+
+.wrapper {
+    opacity: 1;
+    border: 1px solid white;
+    transition: opacity .2s;
+    padding: 2rem;
+    margin-bottom:1rem;
+    overflow-y: auto;
+    border-radius: 2px;
+}
