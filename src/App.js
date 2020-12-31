@@ -2,6 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import Search from './pages/Search';
 import Meditations from './pages/Meditations';
 import styles from './assets/css/pages/app.module.css';
+import './assets/css/global/main.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
 import './assets/css/utilities/util.css';

@@ -14,3 +14,7 @@
     opacity: 1;
     border-color: white;
 }
+
+.card * {
+    color: white;
+}
