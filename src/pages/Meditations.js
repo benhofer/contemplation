@@ -26,12 +26,19 @@ function Meditations(props) {
   let query = useQuery();
   let filter = query.get("filter");
 
-  useEffect(() => {
+  const setVerseState = () => {
     let v = query.get("verse");
+    console.log(v);
     if (v) {
       setVerse(v);
+    } else {
+      setVerse(null);
     }
-  },[query])
+  }
+
+  useEffect(() => {
+    setVerseState()
+  })
 
   const handleChangeVerse = (verse) => {
     let newPath;
