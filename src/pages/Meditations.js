@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Card from '../components/Card';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
-import Meditation from "./Meditation";
+import { BrowserRouter as Router, Switch, Route, Link, useParams, useHistory, useLocation } from "react-router-dom";
+import Meditation from './Meditation';
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -19,9 +19,33 @@ function Meditations(props) {
   const [meditations, setMeditations] = useState('');
   const [cardmm, setCardmm] = useState([0,4])
   const [currRow, setCurrRow] = useState(0);
+  const [verse, setVerse] = useState(null)
 
+  let location = useLocation();
+  let history = useHistory(); 
   let query = useQuery();
   let filter = query.get("filter");
+
+  useEffect(() => {
+    let v = query.get("verse");
+    if (v) {
+      setVerse(v);
+    }
+  },[query])
+
+  const handleChangeVerse = (verse) => {
+    let newPath;
+    let regex = /(?:&verse=)(?:[0-9]*)/;
+
+    if (verse) {
+      newPath = location.pathname + location.search + "&verse=" + verse; 
+    } else {
+      newPath = location.pathname + location.search.replace(regex, '')
+    }
+    
+    history.push(newPath) 
+    verse ? setVerse(verse) : setVerse(null);
+  }
 
   const filterByWork = (cat) => {
     let newStructure = [];
@@ -89,10 +113,7 @@ function Meditations(props) {
       <div className="wrapper">
         <Router>
           <Switch>
-              <Route path='/meditations/:id'>
-                <Meditation />
-              </Route>
-              <Route path='/meditations'>
+              <Route exact path='/meditations'>
                 { meditations && meditations.map(cat => 
                     <section className="o-section">
                       <div className="row">
@@ -103,10 +124,10 @@ function Meditations(props) {
                           <div className="row">
                             { cat[1].map(verse => 
                                 <div className="col-md-4">
-                                  <Link to={`/meditations/${verse.id}`}>
-                                    <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
-                                  </Link>
+                                  <div onClick={() => handleChangeVerse(verse.id)}>
+                                  <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
                                 </div>
+                              </div>
                             )}
                           </div>
                         </div>
@@ -114,10 +135,14 @@ function Meditations(props) {
                     </section>
                   )}
               </Route>
-             
           </Switch>
         </Router>
         
+        {
+          verse && 
+            <Meditation exit={() => handleChangeVerse(null)} verse={verse} /> 
+        }
+
         </div>
       </div>
     )

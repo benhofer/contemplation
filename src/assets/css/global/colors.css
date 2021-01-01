@@ -4,6 +4,10 @@ html {
     transition: background-color .6s;
 }
 
+a {
+    color: white;
+}
+
 body {
     background: black;
 }

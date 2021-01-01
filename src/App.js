@@ -16,12 +16,14 @@ import {
 } from "react-router-dom";
 import cross from './assets/img/cross.svg';
 
-function App() {
+function App() { 
   const [pageClass, setPageClass] = useState('welcome');
   const [linkClass, setLinkClass] = useState('');
   const [colorClass, setColorClass] = useState('');
 
-  const initPage = () => {window.setTimeout(() => {setLinkClass('press'); setPageClass('search')}, 1997)};
+  const initPage = () => {window.setTimeout(() => {setLinkClass('press'); setPageClass('navigate')}, 1997)};
+
+  useEffect(()=>initPage(),[]);
 
   return (
       <Fragment>
@@ -37,20 +39,20 @@ function App() {
             </div>
           </div>
         </div>
-        <div id="main" className={`${pageClass} ${linkClass} main`} onMouseEnter={() => initPage()}>
+        <div id="main" className={`${pageClass} ${linkClass} main`}>
           <Router>
             <div>
               <div className="main-content">
-                <Switch>        
-                  <Route path="/meditations">
+                <Switch>     
+                  <Route exact path="/meditations">
                     <div>
                       <header className={`${styles.header} app-header`} onClick={() => initPage()}> 
                         <h1><NavLink to="/">TEMPORA</NavLink></h1>     
                         <SearchWidget />       
                       </header>  
-                      <Meditations />
+                      <Meditations setPageState={setPageClass} />
                     </div>
-                  </Route>
+                  </Route>       
                   <Route exact path="/">
                     <div>
                       <header className={`${styles.header} app-header home`} onClick={() => initPage()}> 
@@ -63,9 +65,10 @@ function App() {
               </div>      
             </div>         
           </Router>
+          
           <div className="push"></div>
         </div>
-        <footer className={`${styles.footer} page-footer`}>
+        <footer className={`${styles.footer} ${pageClass} page-footer`}>
           <div className="lower-footer">
             <nav>
                 <a href>About</a>
