@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useParams } from "react-router-dom";
 import styles from '../assets/css/pages/meditation.module.css';
-import { Link, useHistory } from "react-router-dom";
+import Gels from "../components/Gels";
 
 const API_URL = "/data.json";
 const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
@@ -10,6 +10,10 @@ const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Be
 function Meditation(props) { 
     const [ verse, setVerse ] = useState(null);
     const [ meditating, setMeditating ] = useState(false);
+
+    let { id } = useParams();
+    console.log(id);
+    let verseId = parseInt(id.replace(/\/meditate\//, ''));
 
     var bellAudio = new Audio(BELL_URL)
     var verseAudio; 
@@ -25,7 +29,7 @@ function Meditation(props) {
     useEffect(() => {
       axios.get(API_URL)
         .then((response) => {
-          let verseContent = response.data.verses.filter(verse => verse.id === parseInt(props.verse))[0]
+          let verseContent = response.data.verses.filter(verse => verse.id === verseId)[0]
           setVerse(verseContent)
         })
         .catch((e) => {
@@ -35,9 +39,9 @@ function Meditation(props) {
   
     return (
       <div className={styles.wrapper}>
-        <h1>{verse && verse.short_desc}</h1>
-        <button onClick={props.exit}>Exit</button>
-        <button className={styles.play_btn} onClick={() => playSequence()}>Play</button>
+          <h1>{verse && verse.short_desc}</h1>
+          <button onClick={props.exit}>Exit</button>
+          <button className={styles.play_btn} onClick={() => playSequence()}>Play</button>
       </div>
     )
   }

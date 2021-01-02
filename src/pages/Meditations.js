@@ -28,7 +28,6 @@ function Meditations(props) {
 
   const setVerseState = () => {
     let v = query.get("verse");
-    console.log(v);
     if (v) {
       setVerse(v);
     } else {
@@ -118,38 +117,26 @@ function Meditations(props) {
   return (
     <div>
       <div className="wrapper">
-        <Router>
-          <Switch>
-              <Route exact path='/meditations'>
-                { meditations && meditations.map(cat => 
-                    <section className="o-section">
-                      <div className="row">
-                        <div className="col-md-3">
-                          <Card title={cat[0].name} text={cat[0].description} />
+          { meditations && meditations.map(cat => 
+              <section className="o-section">
+                <div className="row">
+                  <div className="col-md-3">
+                    <Card title={cat[0].name} text={cat[0].description} />
+                  </div>
+                  <div className="col-md-9">
+                    <div className="row">
+                      { cat[1].map(verse => 
+                          <div className="col-md-4">
+                            <Link to={'/meditate/'+verse.id}>
+                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
+                            </Link>
                         </div>
-                        <div className="col-md-9">
-                          <div className="row">
-                            { cat[1].map(verse => 
-                                <div className="col-md-4">
-                                  <div onClick={() => handleChangeVerse(verse.id)}>
-                                  <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                  )}
-              </Route>
-          </Switch>
-        </Router>
-        
-        {
-          verse && 
-            <Meditation exit={() => handleChangeVerse(null)} verse={verse} /> 
-        }
-
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
         </div>
       </div>
     )

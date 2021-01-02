@@ -8,6 +8,10 @@
     color: #ffffff;
     font-family: "Lato";
    }
+
+   .u-text-center {
+     text-align: center!important;
+   }
   
    button {
      font-family: "Lato"

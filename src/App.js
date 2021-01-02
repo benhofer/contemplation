@@ -8,7 +8,8 @@ import './assets/css/global/grid.css';
 import './assets/css/utilities/util.css';
 import './assets/css/objects/objects.css';
 import SearchWidget from './components/Search';
-
+import Gels from './components/Gels';
+import Meditation from './pages/Meditation';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,55 +28,43 @@ function App() {
 
   return (
       <Fragment>
-        <div id="gels" className={`${colorClass} ${pageClass} ${linkClass}`}>
-          <div className="outermost">
-            <div className="outer">
-              <div className="inner">
-                <div className="innermost">
-                  <img src={cross} alt="the cross" width='100px' />
-                  <small className="sr-only">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Gels img={{src: cross, alt: 'The Cross'}} colorClass={colorClass} pageClass={pageClass} linkClass={linkClass} />
+        
         <div id="main" className={`${pageClass} ${linkClass} main`}>
+
           <Router>
-            <div>
-              <div className="main-content">
-                <Switch>     
-                  <Route exact path="/meditations">
-                    <div>
-                      <header className={`${styles.header} app-header`} onClick={() => initPage()}> 
-                        <h1><NavLink to="/">TEMPORA</NavLink></h1>     
-                        <SearchWidget />       
-                      </header>  
-                      <Meditations setPageState={setPageClass} />
-                    </div>
-                  </Route>       
-                  <Route exact path="/">
-                    <div>
-                      <header className={`${styles.header} app-header home`} onClick={() => initPage()}> 
-                        <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
-                      </header>  
-                      <Search />
-                    </div> 
-                  </Route>
-                </Switch>
-              </div>      
-            </div>         
+         
+            <Switch>     
+              <Route path="/meditate/:id">
+                <Meditation /> 
+              </Route>
+              <Route exact path="/browse">
+                <div>
+                  <header className={`${styles.header} app-header`} onClick={() => initPage()}> 
+                    <h1><NavLink to="/">TEMPORA</NavLink></h1>     
+                    <SearchWidget />       
+                  </header>  
+                  <Meditations setPageState={setPageClass} />
+                </div>
+              </Route>       
+              <Route exact path="/">
+                <div>
+                  <header className={`${styles.header} app-header home`} onClick={() => initPage()}> 
+                    <h1><NavLink to="/">TEMPORA</NavLink></h1>                   
+                  </header>  
+                  <Search />
+                </div> 
+              </Route>
+            </Switch>
+                    
           </Router>
           
           <div className="push"></div>
         </div>
+        
         <footer className={`${styles.footer} ${pageClass} page-footer`}>
           <div className="lower-footer">
-            <nav>
-                <a href>About</a>
-                <a href>Contribute</a>
-                <a href>Connect</a>
-                <a href>Resources</a>
-            </nav>
+            <div className="u-text-center u-small">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></div>
           </div>
         </footer>
     </Fragment>

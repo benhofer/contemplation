@@ -10,7 +10,7 @@ function Search (props) {
     return (
         <div className={`${styles.primary_search} ${inputFocus ? styles.search_active : ''}`}>
             <input type="text" placeholder='Search' onFocus={()=>{setInputFocus(true)}} onBlur={()=>{setInputFocus(false)}} />
-            <NavLink to="/meditations" className={`${styles.search_btn}`}>
+            <NavLink to="/browse" className={`${styles.search_btn}`}>
                 <Icon icon={roundSearch} style={{fontSize: '2rem'}} /> 
                 <span className="sr-only">Search</span>
             </NavLink>

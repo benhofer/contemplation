@@ -1,3 +1,7 @@
 .u-text-center {
     text-align: center!important;
 }
+
+small, .u-small {
+    font-size: 11px;
+}
