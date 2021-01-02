@@ -26,33 +26,6 @@ function Meditations(props) {
   let query = useQuery();
   let filter = query.get("filter");
 
-  const setVerseState = () => {
-    let v = query.get("verse");
-    if (v) {
-      setVerse(v);
-    } else {
-      setVerse(null);
-    }
-  }
-
-  useEffect(() => {
-    setVerseState()
-  })
-
-  const handleChangeVerse = (verse) => {
-    let newPath;
-    let regex = /(?:&verse=)(?:[0-9]*)/;
-
-    if (verse) {
-      newPath = location.pathname + location.search + "&verse=" + verse; 
-    } else {
-      newPath = location.pathname + location.search.replace(regex, '')
-    }
-    
-    history.push(newPath) 
-    verse ? setVerse(verse) : setVerse(null);
-  }
-
   const filterByWork = (cat) => {
     let newStructure = [];
     cat.original_works.map(work => {
