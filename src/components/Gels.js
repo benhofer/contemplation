@@ -2,8 +2,8 @@ import React from 'react';
 
 function Gels(props){
     return (
-        <div className={`gels ${props.colorClass} ${props.pageClass} ${props.linkClass}`}>
-          <div className="outermost" >
+        <div className={`gels ${props.color}`}>
+          <div className="outermost">
             <div className="outer">
               <div className="inner">
                 <div className="innermost">

@@ -18,7 +18,9 @@ function Meditation(props) {
     let history = useHistory();
     let { id } = useParams();
 
-    let verseId = parseInt(id.replace(/\/meditate\//, ''));
+    let verseId = parseInt(id.replace(/\/app\/meditate\//, ''));
+
+    console.log(id)
 
     var bellAudio = new Audio(BELL_URL)
     var verseAudio; 

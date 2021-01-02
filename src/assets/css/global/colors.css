@@ -74,7 +74,7 @@ body:hover .outermost, body:focus .outermost {
 }
 
 /* Nav Hover */
-.press .inner {
+.inner {
     background-color: rgba(11, 23, 55, .25);
 }
 
