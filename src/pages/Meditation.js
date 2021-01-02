@@ -20,8 +20,6 @@ function Meditation(props) {
 
     let verseId = parseInt(id.replace(/\/app\/meditate\//, ''));
 
-    console.log(id)
-
     var bellAudio = new Audio(BELL_URL)
     var verseAudio; 
 
@@ -29,12 +27,16 @@ function Meditation(props) {
       history.goBack();
     }
 
+    const setEngagement = (st) => {
+      props.setEngagement(st)
+    }
+
     const playSequence = () => {
       verseAudio = new Audio(verse.url);
       setMeditating(true);
-      window.setTimeout(() => {bellAudio.play()}, 800)
-      window.setTimeout(() => {verseAudio.play()}, 2400)
-      window.setTimeout(() => {bellAudio.play(); setMeditating(false)}, length)
+      let bell1 = window.setTimeout(() => {bellAudio.play()}, 800)
+      let audio = window.setTimeout(() => {verseAudio.play()}, 2400)
+      let bell2 = window.setTimeout(() => {bellAudio.play(); setMeditating(false); setEngagement(''); }, length)
     }
 
     useEffect(() => {
@@ -57,7 +59,7 @@ function Meditation(props) {
           <h4 className={styles.attribution}>{verse && verse.attribution}</h4>
           <div className={styles.time}>5 minutes</div>
           { !meditating && 
-            <button className={`${styles.play_btn} ${styles.meditate}`} onClick={() => playSequence()}>
+            <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => setEngagement('')} onMouseOver={() => setEngagement('press')} onClick={() => playSequence()}>
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
             </button>
           }{ meditating && 

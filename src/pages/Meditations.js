@@ -9,7 +9,11 @@ function Meditations(props) {
 
   let { m } = useParams();
 
-  console.log(m)
+  if (m === 'meditate') {
+    props.setColor('red');
+  } else {
+    props.setColor('blue')
+  }
   
   return (
     <div>
@@ -24,7 +28,7 @@ function Meditations(props) {
         }{ m === 'meditate' && 
           <Router>
             <Switch>
-              <Route path="/app/:m/:id" children={<Meditation />} /> 
+              <Route path="/app/:m/:id" children={<Meditation setEngagement={props.setEngagement} />} /> 
             </Switch>
           </Router>
         }

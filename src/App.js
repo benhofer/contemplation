@@ -37,8 +37,7 @@ export default function App() {
 }
 
 function AnimationApp() { 
-  const [pageClass, setPageClass] = useState('navigate');
-  const [linkClass, setLinkClass] = useState('press');
+  const [engagement, setEngagement] = useState('');
   const [colorClass, setColorClass] = useState('');
 
   let location = useLocation();
@@ -57,14 +56,14 @@ function AnimationApp() {
                 classNames="fade"
                 timeout={300}
               >
-                <Gels color={colorClass} />
+                <Gels color={colorClass} engagement={engagement} />
               </CSSTransition>
           </TransitionGroup>
 
           <div id="main" className={`main`}>
             <Router>
               <Switch>     
-                <Route path="/app/:m" children={<Meditations />} />
+                <Route path="/app/:m" children={<Meditations setColor={(c) => setColorClass(c)} setEngagement={(st) => setEngagement(st)} />} />
                 <Route exact path="/app">
                   <div>
                     <header className={`${styles.header} app-header home`}> 
@@ -80,7 +79,7 @@ function AnimationApp() {
             <div className="push"></div>
           </div>
 
-            <footer className={`${styles.footer} ${pageClass} page-footer`}>
+            <footer className={`${styles.footer} page-footer`}>
               <div className="lower-footer">
                 <div className="u-text-center u-small">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></div>
               </div>

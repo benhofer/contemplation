@@ -73,49 +73,45 @@ body:hover .outermost, body:focus .outermost {
     background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
 }
 
-/* Nav Hover */
-.inner {
-    background-color: rgba(11, 23, 55, .25);
-}
+/* Card Colors */
 
-/* Link Hovers */
-.press.purple .inner {
+.purple .inner {
     background-color: rgba(77, 1, 77, .12);
 }
 
-.press.blue .inner {
+.blue .inner {
     background-color: rgba(11, 23, 55, .33);
 }
 
-.press.gold .inner {
+.gold .inner {
     background-color: rgba(237, 188, 1, 0.08);
 }
 
-.press.red .inner {
+.red .inner {
     background-color: rgba(100, 30, 10, 0.18);
 }
 
-.press.black .inner {
+.black .inner {
     background-color: rgba(3, 1, 6, 0.13);
 }
 
-.engaged.purple {
+.press.purple .inner {
     background-color: rgba(77, 1, 77, .33);
 }
 
-.engaged.blue {
+.press.blue .inner{
     background-color: rgba(11, 23, 55, .44);
 }
 
-.engaged.gold {
+.press.gold .inner{
     background-color: rgba(237, 188, 1, 0.12);
 }
 
-.engaged.red {
+.press.red .inner{
     background-color: rgba(100, 30, 10, 0.26);
 }
 
-.engaged .inner {
+.press .inner {
     background-color: none;
 }
 
