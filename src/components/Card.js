@@ -12,7 +12,7 @@ function Card(props) {
     return (
         <div className={styles.card}>
             <h1>{props.title}</h1>
-            <small>{props.subtitle}</small> 
+            <h4>{props.subtitle}</h4> 
             <p>{text}</p>
         </div>
     )

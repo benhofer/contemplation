@@ -56,7 +56,7 @@ function Meditation(props) {
             <Icon icon={back} width="40px" color="white" />
           </button>
           <h1>{verse && verse.short_desc}</h1>
-          <h4 className={styles.attribution}>{verse && verse.attribution}</h4>
+          <h4 className={styles.attribution}>{verse && verse["attribution_hr"]}</h4>
           <div className={styles.time}>5 minutes</div>
           { !meditating && 
             <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => setEngagement('')} onMouseOver={() => setEngagement('press')} onClick={() => playSequence()}>

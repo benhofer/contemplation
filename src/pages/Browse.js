@@ -96,7 +96,7 @@ function Browse(props) {
                 { cat[1].map(verse => 
                     <div className="col-md-4">
                     <Link to={'/app/meditate/'+verse.id}>
-                        <Card type="verse" title={verse.short_desc} subtitle={verse.attribution} text={verse.text} url='link to meditation page' color='red' />
+                        <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
                     </Link>
                 </div>
                 )}
