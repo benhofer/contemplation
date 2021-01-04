@@ -46,12 +46,20 @@ function Meditation(props) {
 
     useEffect(() => {
       return () => {
-        audioTimer.current.verseAudio && audioTimer.current.verseAudio.pause();
-        audioTimer.current.bell1Audio && audioTimer.current.bell1Audio.pause();
-        audioTimer.current.bell2Audio && audioTimer.current.bell2Audio.pause();
-        window.clearTimeout(audioTimer.current.bell1Timer)
-        window.clearTimeout(audioTimer.current.bell2Timer)
-        window.clearTimeout(audioTimer.current.verseTimer)
+        if (audioTimer && audioTimer.current) {
+          if (audioTimer.current.verseAudio) {
+            audioTimer.current.verseAudio.pause();
+            window.clearTimeout(audioTimer.current.verseTimer)
+          } 
+          if (audioTimer.current.bell1Audio) {
+            audioTimer.current.bell1Audio.pause();
+            window.clearTimeout(audioTimer.current.bell1Timer)
+          }
+          if (audioTimer.current.bell2Audio) {
+            audioTimer.current.bell2Audio.pause();
+            window.clearTimeout(audioTimer.current.bell2Timer)
+          }
+        } 
       }
     }, [audio, bell1, bell2])
 
