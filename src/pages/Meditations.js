@@ -22,8 +22,8 @@ function Meditations(props) {
     <div>
        { m === 'browse' && 
             <div>
-              <header className={`${styles.header} app-header`} onClick={() => props.goHome()}> 
-                <h1><NavLink to="/app">TEMPORA</NavLink></h1>     
+              <header className={`${styles.header} app-header`}> 
+                <h1><NavLink to="/app" onClick={() => props.goHome()}>TEMPORA</NavLink></h1>     
                 {/*<SearchWidget /> */} 
               </header>  
               <Browse />
