@@ -14,6 +14,7 @@ function Meditation(props) {
     const [ verse, setVerse ] = useState(null);
     const [ meditating, setMeditating ] = useState(false);
     const [ length, setLength ] = useState(300000);
+    const [ remaining, setRemaining ] = useState(length - 1);
 
     let history = useHistory();
     let { id } = useParams();
@@ -39,14 +40,24 @@ function Meditation(props) {
       audioTimer.current.bell2Audio = new Audio(BELL_URL);
 
       setMeditating(true);
-        audioTimer.current.bell1Timer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, 800)
-        audioTimer.current.verseTimer = window.setTimeout(() => {audioTimer.current.verseAudio.play()}, 2400)
-        audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); setEngagement(''); }, length)
+
+      let t = new Date().getTime();
+
+      audioTimer.current.finish = t + length;
+
+      console.log('now', t);
+      console.log('length', length);
+
+      audioTimer.current.bell1Timer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, 800)
+      audioTimer.current.verseTimer = window.setTimeout(() => {audioTimer.current.verseAudio.play()}, 2400)
+      audioTimer.current.intervalCountdown = window.setInterval(() => { let now = new Date().getTime(); let r = (audioTimer.current.finish - now); setRemaining(r) }, 30000);
+      audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); setEngagement(''); }, length)
     }
 
     useEffect(() => {
       return () => {
         if (audioTimer && audioTimer.current) {
+          audioTimer.current.intervalCountdown && window.clearInterval(audioTimer.current.intervalCountdown);
           if (audioTimer.current.verseAudio) {
             audioTimer.current.verseAudio.pause();
             window.clearTimeout(audioTimer.current.verseTimer)
@@ -81,7 +92,18 @@ function Meditation(props) {
           </button>
           <h1>{verse && verse.short_desc}</h1>
           <h4 className={styles.attribution}>{verse && verse["attribution_hr"]}</h4>
-          <div className={styles.time}>5 minutes</div>
+          <div className={styles.time}>
+            {
+              !meditating && <span>
+                { (length/60000) } minutes
+              </span>
+            }
+            {
+              meditating && <span>
+                { Math.floor(remaining/60000) } minute{ Math.floor(remaining/60000) !== 1 && <span>s</span> } remaining
+              </span>
+            }
+          </div>
           { !meditating && 
             <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => setEngagement('')} onMouseOver={() => setEngagement('press')} onClick={() => playSequence()}>
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
