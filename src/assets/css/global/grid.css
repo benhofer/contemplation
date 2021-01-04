@@ -114,6 +114,13 @@
     flex-wrap: wrap;
     margin-right: -0.5rem;
     margin-left: -0.5rem; }
+
+  @media screen and (max-width: 1152px) {
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
   
   .row.reverse {
     -webkit-box-direction: reverse;

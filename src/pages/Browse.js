@@ -81,7 +81,7 @@ function Browse(props) {
       .catch((e) => {
         console.log(e)
       })
-  });
+  },[filter]);
 
   return (
     <div className="wrapper">

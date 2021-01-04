@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import axios from 'axios';
 import {useParams, useHistory } from "react-router-dom";
 import styles from '../assets/css/pages/meditation.module.css';
@@ -13,15 +13,14 @@ const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Be
 function Meditation(props) { 
     const [ verse, setVerse ] = useState(null);
     const [ meditating, setMeditating ] = useState(false);
-    const [ length, setLength ] = useState(24000);
+    const [ length, setLength ] = useState(300000);
 
     let history = useHistory();
     let { id } = useParams();
 
     let verseId = parseInt(id.replace(/\/app\/meditate\//, ''));
 
-    var bellAudio = new Audio(BELL_URL)
-    var verseAudio; 
+    let audioTimer = useRef(null); 
 
     const exit = () => {
       history.goBack();
@@ -31,13 +30,30 @@ function Meditation(props) {
       props.setEngagement(st)
     }
 
+    let bell1, audio, bell2; 
+
     const playSequence = () => {
-      verseAudio = new Audio(verse.url);
+      audioTimer.current = {};
+      audioTimer.current.verseAudio = new Audio(verse.url);
+      audioTimer.current.bell1Audio = new Audio(BELL_URL);
+      audioTimer.current.bell2Audio = new Audio(BELL_URL);
+
       setMeditating(true);
-      let bell1 = window.setTimeout(() => {bellAudio.play()}, 800)
-      let audio = window.setTimeout(() => {verseAudio.play()}, 2400)
-      let bell2 = window.setTimeout(() => {bellAudio.play(); setMeditating(false); setEngagement(''); }, length)
+        audioTimer.current.bell1Timer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, 800)
+        audioTimer.current.verseTimer = window.setTimeout(() => {audioTimer.current.verseAudio.play()}, 2400)
+        audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); setEngagement(''); }, length)
     }
+
+    useEffect(() => {
+      return () => {
+        audioTimer.current.verseAudio && audioTimer.current.verseAudio.pause();
+        audioTimer.current.bell1Audio && audioTimer.current.bell1Audio.pause();
+        audioTimer.current.bell2Audio && audioTimer.current.bell2Audio.pause();
+        window.clearTimeout(audioTimer.current.bell1Timer)
+        window.clearTimeout(audioTimer.current.bell2Timer)
+        window.clearTimeout(audioTimer.current.verseTimer)
+      }
+    }, [audio, bell1, bell2])
 
     useEffect(() => {
       axios.get(API_URL)
@@ -48,7 +64,7 @@ function Meditation(props) {
         .catch((e) => {
           console.log(e)
         })
-    });
+    },[verseId]);
   
     return (
       <div className={styles.wrapper}>
