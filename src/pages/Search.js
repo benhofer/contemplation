@@ -42,6 +42,7 @@ function Search (props) {
 
     return (
       <div className={`${styles.search_page}`}>
+        {/*
         <div className={`${styles.search_form}`}>
           <label htmlFor="search" className="sr-only">Search Meditations</label>
           <div className={`${styles.primary_search} ${inputFocus ? styles.search_active : ''}`}>
@@ -51,7 +52,7 @@ function Search (props) {
               <span className="sr-only">Search</span>
             </NavLink>
           </div>
-        </div>
+        </div> */}
         <div className={`${styles.browse_links}`}>
           {/* <NavLink to="/attribution" className={`${styles.browse_link}`}>
             Curator

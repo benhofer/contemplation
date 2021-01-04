@@ -27,10 +27,6 @@ function Meditation(props) {
       history.goBack();
     }
 
-    const setEngagement = (st) => {
-      props.setEngagement(st)
-    }
-
     let bell1, audio, bell2; 
 
     const playSequence = () => {
@@ -51,7 +47,7 @@ function Meditation(props) {
       audioTimer.current.bell1Timer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, 800)
       audioTimer.current.verseTimer = window.setTimeout(() => {audioTimer.current.verseAudio.play()}, 2400)
       audioTimer.current.intervalCountdown = window.setInterval(() => { let now = new Date().getTime(); let r = (audioTimer.current.finish - now); setRemaining(r) }, 30000);
-      audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); setEngagement(''); }, length)
+      audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); props.setEngagement(''); }, length)
     }
 
     useEffect(() => {
@@ -105,7 +101,7 @@ function Meditation(props) {
             }
           </div>
           { !meditating && 
-            <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => setEngagement('')} onMouseOver={() => setEngagement('press')} onClick={() => playSequence()}>
+            <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => props.setEngagement('')} onMouseOver={() => {console.log("press"); props.setEngagement('press')}} onClick={() => playSequence()}>
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
             </button>
           }{ meditating && 

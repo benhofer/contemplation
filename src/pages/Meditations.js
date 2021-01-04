@@ -10,18 +10,21 @@ function Meditations(props) {
   let { m } = useParams();
 
   if (m === 'meditate') {
-    props.setColor('red');
+    props.setColor('purple');
   } else {
     props.setColor('blue')
   }
+
+  useEffect(() => props.setEngagement(m),[]);
+  
   
   return (
     <div>
        { m === 'browse' && 
             <div>
-              <header className={`${styles.header} app-header`}> 
+              <header className={`${styles.header} app-header`} onClick={() => props.goHome()}> 
                 <h1><NavLink to="/app">TEMPORA</NavLink></h1>     
-                <SearchWidget />       
+                {/*<SearchWidget /> */} 
               </header>  
               <Browse />
             </div>

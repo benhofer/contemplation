@@ -74,6 +74,8 @@
 .browse_links {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    top: 20vh;
 }
 
 .browse_link, .browse_heading {

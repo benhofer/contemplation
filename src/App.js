@@ -7,9 +7,7 @@ import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
 import './assets/css/utilities/util.css';
 import './assets/css/objects/objects.css';
-import SearchWidget from './components/Search';
 import Gels from './components/Gels';
-import Meditation from './pages/Meditation';
 import {
   TransitionGroup,
   CSSTransition
@@ -37,10 +35,17 @@ export default function App() {
 }
 
 function AnimationApp() { 
-  const [engagement, setEngagement] = useState('');
-  const [colorClass, setColorClass] = useState('');
+  const [ engagement, setEngagement ] = useState('welcome');
+  const [ colorClass, setColorClass ] = useState('gold');
+  const [ bgImg, setBgImg ] = useState({src: cross, alt: 'The Cross'});
 
   let location = useLocation();
+
+  function goHome() {
+    setBgImg({src: cross, alt: 'The Cross'});
+    setEngagement('welcome');
+    setColorClass('gold');
+  }
 
   return (
       <div>
@@ -56,14 +61,14 @@ function AnimationApp() {
                 classNames="fade"
                 timeout={300}
               >
-                <Gels color={colorClass} engagement={engagement} />
+                <Gels color={colorClass} engagement={engagement} img={bgImg}/>
               </CSSTransition>
           </TransitionGroup>
 
           <div id="main" className={`main`}>
             <Router>
               <Switch>     
-                <Route path="/app/:m" children={<Meditations setColor={(c) => setColorClass(c)} setEngagement={(st) => setEngagement(st)} />} />
+                <Route path="/app/:m" children={<Meditations goHome={goHome} setColor={(c) => setColorClass(c)} setEngagement={setEngagement} />} />
                 <Route exact path="/app">
                   <div>
                     <header className={`${styles.header} app-header home`}> 
@@ -81,7 +86,7 @@ function AnimationApp() {
 
             <footer className={`${styles.footer} page-footer`}>
               <div className="lower-footer">
-                <div className="u-text-center u-small">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></div>
+                <div className="u-text-center">O God, you will keep in perfect peace those whose minds are fixed on you. <i>Isaiah 26:3</i></div>
               </div>
             </footer>
 

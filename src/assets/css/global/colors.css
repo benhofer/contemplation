@@ -22,15 +22,17 @@ body {
     transition: background-color .7s ease-out, opacity .7s ease-out;
 }
 
-.gels.press img, .gels.engaged img {
-    opacity: 0; 
-}
 
 .gels img {
     width: 100px; 
     margin: 0 auto;
     display: block;
-    margin: calc(50vh - 150px) auto;
+    margin: calc(50vh - 80px) auto;
+    transition: opacity .2s;
+    opacity: 0;
+}
+.gels.welcome img {
+    opacity: 1; 
 }
 
 .meditation-page img {
@@ -61,7 +63,7 @@ html, .solid {
 }
 
 .outermost {
-    background: black;
+    background: #141414;
 }
 
 body:hover .outermost, body:focus .outermost {
@@ -96,7 +98,7 @@ body:hover .outermost, body:focus .outermost {
 }
 
 .press.purple .inner {
-    background-color: rgba(77, 1, 77, .33);
+    background-color: rgba(77, 1, 77, .26);
 }
 
 .press.blue .inner{
