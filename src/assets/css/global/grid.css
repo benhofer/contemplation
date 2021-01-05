@@ -10,6 +10,7 @@
   z-index: 1;
   height: 175px;
   padding: 4rem 1rem 0;
+  padding-bottom: 0;
   max-width: 1800px;
   margin: 0 auto;
 }
@@ -18,7 +19,6 @@
     justify-content: center;
     align-items: center;
     padding-top: 5rem;
-    padding-left: 0;
 }
 
 .app-header h1 {
@@ -30,11 +30,13 @@
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: .75rem;
+  text-indent: .75rem;
   font-weight: 100;
 }
 
 .app-header h1 a {
   text-decoration: none;
+  display: block;
   color: white;
   transition: opacity .4s;
 }
