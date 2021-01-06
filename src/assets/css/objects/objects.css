@@ -1,3 +1,23 @@
 .o-section { 
     padding-bottom: 2.5rem;
 }
+
+.btn {
+    padding: 1rem 2rem;
+    margin-bottom: 1.875rem;
+    color: white;
+    text-decoration: none;
+    font-size: 13.33333px;
+    margin-top:0;
+    font-weight: 500;
+}
+    
+.btn:hover, .btn:focus {
+    background: rgba(255,255,255,.075);
+    cursor: pointer;
+}
+
+.btn-full-width {
+    display: block;
+    width: 100%;
+}

@@ -15,7 +15,8 @@ function Browse(props) {
   const [meditations, setMeditations] = useState('');
   const [cardmm, setCardmm] = useState([0,4])
   const [currRow, setCurrRow] = useState(0);
-  const [verse, setVerse] = useState(null)
+  const [verse, setVerse] = useState(null);
+  const [expand, setExpand] = useState(null);
 
   let location = useLocation();
   let history = useHistory(); 
@@ -76,6 +77,7 @@ function Browse(props) {
         } else if (filter === 'collection') {
           m = filterByCollection(response.data)
         }
+        console.log(m);
         setMeditations(m);
       })
       .catch((e) => {
@@ -85,24 +87,35 @@ function Browse(props) {
 
   return (
     <div className="wrapper">
-    { meditations && meditations.map(cat => 
+    { meditations && meditations.map((cat,i) => 
         <section className="o-section">
-        <div className="row">
+          <div className="row">
             <div className="col-md-3">
-            <Card title={cat[0].name} text={cat[0].description} />
+              <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} />
             </div>
             <div className="col-md-9">
-            <div className="row">
-                { cat[1].map(verse => 
-                    <div className="col-md-4">
-                    <Link to={'/app/meditate/'+verse.id}>
-                        <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
-                    </Link>
-                </div>
-                )}
+              <div className="row">
+                  { cat[1].map((verse,j) => (
+                      expand !== i ? j < 3 && (
+                        <div className="col-md-4">
+                          <Link to={'/app/meditate/'+verse.id}>
+                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
+                          </Link>
+                        </div>
+                      ) : (
+                        <div className="col-md-4">
+                          <Link to={'/app/meditate/'+verse.id}>
+                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
+                          </Link>
+                        </div>
+                      )
+                    )
+                  )}
+              </div>
+              { expand !== i && cat[1].length > 6 && <a href={'#'+cat[0].id} className='btn btn-full-width' onClick={() => setExpand(i)}>Show More</a> }
+              { expand === i && cat[1].length > 6 && <a href={'#'+cat[0].id} className='btn btn-full-width' onClick={() => setExpand(null)}>Show Less</a> }
             </div>
-            </div>
-        </div>
+          </div>
         </section>
     )}
 </div>
