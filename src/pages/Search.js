@@ -53,37 +53,39 @@ function Search (props) {
             </NavLink>
           </div>
         </div> */}
-        <div className={`${styles.browse_links}`}>
-          {/* <NavLink to="/attribution" className={`${styles.browse_link}`}>
-            Curator
-          </NavLink> */}
+        <div className={styles.browse_section}>
           <h1 className={`${styles.browse_heading}`}>
             <i>Browse By</i>
           </h1>
-          <NavLink to="/app/browse?filter=author" className={`${styles.browse_link}`}>
-            Author
-          </NavLink>
-          <NavLink to="/app/browse?filter=collection" className={`${styles.browse_link}`}>
-            Collection
-          </NavLink>
-          <NavLink to="/app/browse?filter=work" className={`${styles.browse_link}`}>
-            Work
-          </NavLink>
-          {/*<NavLink to="/app/browse?filter=mood" className={`${styles.browse_link}`}>
-            Mood
-          </NavLink>
-           <NavLink to="/season" className={`${styles.browse_link}`}>
-            Season
-          </NavLink>
-          <NavLink to="/month" className={`${styles.browse_link}`}>
-            Month
-          </NavLink>
-          <NavLink to="/day" className={`${styles.browse_link}`}>
-            Day
-          </NavLink>
-          <NavLink to="/era" className={`${styles.browse_link}`}>
-            Era
-          </NavLink> */}
+          <div className={`${styles.browse_links}`}>
+            {/* <NavLink to="/attribution" className={`${styles.browse_link}`}>
+              Curator
+            </NavLink> */}
+            <NavLink to="/app/browse?filter=author" className={`${styles.browse_link}`}>
+              Author
+            </NavLink>
+            <NavLink to="/app/browse?filter=collection" className={`${styles.browse_link}`}>
+              Collection
+            </NavLink>
+            <NavLink to="/app/browse?filter=work" className={`${styles.browse_link}`}>
+              Work
+            </NavLink>
+            {/*<NavLink to="/app/browse?filter=mood" className={`${styles.browse_link}`}>
+              Mood
+            </NavLink>
+            <NavLink to="/season" className={`${styles.browse_link}`}>
+              Season
+            </NavLink>
+            <NavLink to="/month" className={`${styles.browse_link}`}>
+              Month
+            </NavLink>
+            <NavLink to="/day" className={`${styles.browse_link}`}>
+              Day
+            </NavLink>
+            <NavLink to="/era" className={`${styles.browse_link}`}>
+              Era
+            </NavLink> */}
+          </div>
         </div>
       </div>
     )

@@ -60,9 +60,11 @@
   height: 80px;
 }
 .page-footer{  
+  padding: 0 1rem;
   z-index: 2;
   position: relative;
   height: 80px;
+  font-size: 13.333px;
 }
 .page-footer nav {
   display: flex;
@@ -74,6 +76,28 @@
   font-size: smaller;
   display: block;
   line-height: 26px;
+}
+
+@media screen and (max-height: 600px) {
+  .app-header.home {
+    padding-top: 0;
+  }
+  .lower-footer {
+    padding-top: 20px;
+  }
+}
+
+.gels img {
+  width: 100px; 
+  display: block;
+  margin: calc(50vh - 80px) auto;
+}
+
+@media screen and (max-height: 600px) {
+  .gels img {
+    width: 40px;
+    margin: calc(50vh - 20px) auto;
+  }
 }
 
 /* Flexbox Grid */

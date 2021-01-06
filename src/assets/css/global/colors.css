@@ -24,10 +24,6 @@ body {
 
 
 .gels img {
-    width: 100px; 
-    margin: 0 auto;
-    display: block;
-    margin: calc(50vh - 80px) auto;
     transition: opacity .2s;
     opacity: 0;
 }

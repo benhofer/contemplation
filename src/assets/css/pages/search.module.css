@@ -1,6 +1,5 @@
 .search_page {
     height: calc(100vh - 175px - 80px);
-    padding-top: 25vh;
 }
 
 .search_form, .browse_links {
@@ -71,11 +70,15 @@
     outline: none;
 }
 
+.browse_section {
+    position: absolute;
+    width: 100%;
+    bottom: 12vh;
+}
+
 .browse_links {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    top: 20vh;
 }
 
 .browse_link, .browse_heading {
@@ -86,6 +89,27 @@
     font-size: 13.33333px;
     margin-top:0;
     font-weight: 500;
+}
+
+.browse_heading {
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+@media screen and (max-height: 600px) {
+    .browse_heading {
+        display: none;
+    }
+    .browse_link {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .browse_link {
+        padding: .5rem;
+    }
 }
 
 .browse_link:hover, .browse_link:focus {
