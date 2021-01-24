@@ -72,7 +72,7 @@ body:hover .outermost, body:focus .outermost {
 }
 
 .inner {
-    background-image: radial-gradient(circle at center, rgba(27, 26, 28, 1) 0%,  rgba(27, 26, 28, .25) 5%, transparent 26%);
+    background-image: radial-gradient(circle at center, rgba(27, 26, 28, .75) 0%,  rgba(27, 26, 28, .25) 5%, transparent 26%);
 }
 
 /* Card Colors */
