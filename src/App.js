@@ -1,6 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import Search from './pages/Search';
 import Meditations from './pages/Meditations';
+import BrowseLinks from "./components/BrowseLinks";
 import styles from './assets/css/pages/app.module.css';
 import './assets/css/global/main.css';
 import './assets/css/global/colors.css';
@@ -18,6 +19,19 @@ import {
   Route, useLocation, NavLink
 } from "react-router-dom";
 import cross from './assets/img/cross.svg';
+
+const browseLinks = [
+  {
+    id: 'author',
+    name: 'Author'
+  },{
+    id: 'collection',
+    name: 'Collection'
+  },{
+    id: 'work',
+    name: 'Work'
+  },
+]
 
 export default function App() {
   return (
@@ -68,13 +82,16 @@ function AnimationApp() {
           <div id="main" className={`main`}>
             <Router>
               <Switch>     
-                <Route path="/app/:m" children={<Meditations goHome={goHome} setColor={(c) => setColorClass(c)} setEngagement={setEngagement} />} />
+                <Route path="/app/:m" children={<Meditations browseLinks={browseLinks} goHome={goHome} setColor={(c) => setColorClass(c)} setEngagement={setEngagement} />} />
                 <Route exact path="/app">
                   <div>
                     <header className={`${styles.header} app-header home`}> 
                       <h1><NavLink to="/app">TEMPORA</NavLink></h1>                   
                     </header>  
                     <Search />
+                    <div className={styles.browse_section}>
+                      <BrowseLinks links={browseLinks} heading={true} />
+                    </div>
                   </div> 
                 </Route>
               </Switch>

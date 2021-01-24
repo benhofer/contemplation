@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams, useHistory, useLocation } from "react-router-dom";
 import SearchWidget from '../components/Search';
+import BrowseLinks from "../components/BrowseLinks";
 import Meditation from './Meditation';
 import Browse from './Browse';
 import styles from '../assets/css/pages/meditations.module.css';
@@ -24,7 +25,9 @@ function Meditations(props) {
             <div>
               <header className={`${styles.header} app-header`}> 
                 <h1><NavLink to="/app" onClick={() => props.goHome()}>TEMPORA</NavLink></h1>     
-                {/*<SearchWidget /> */} 
+                {/*<SearchWidget /> */}
+                <BrowseLinks links={props.browseLinks} heading={false} />
+
               </header>  
               <Browse />
             </div>

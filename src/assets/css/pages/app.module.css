@@ -8,3 +8,9 @@ body:hover .header a:hover,
 body:hover .header a:focus {
     opacity: 1;
 }
+
+.browse_section {
+    position: absolute;
+    width: 100%;
+    bottom: 12vh;
+}

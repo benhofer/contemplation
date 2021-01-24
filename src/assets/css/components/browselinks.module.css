@@ -1,0 +1,48 @@
+
+.browse_links {
+    display: flex;
+    justify-content: center;
+    padding-left:0;
+}
+
+.browse_links li {
+    list-style: none;
+}
+
+.browse_link, .browse_heading {
+    padding: 1rem 2rem;
+    margin-bottom: 1.875rem;
+    color: white;
+    text-decoration: none;
+    font-size: 13.33333px;
+    margin-top:0;
+    font-weight: 500;
+}
+
+.browse_heading {
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+
+@media screen and (max-height: 600px) {
+    .browse_heading {
+        display: none;
+    }
+    .browse_link {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .browse_link {
+        padding: .5rem;
+    }
+}
+
+.browse_link:hover, .browse_link:focus {
+    background: rgba(255,255,255,.075);
+    cursor: pointer;
+}
