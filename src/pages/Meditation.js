@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, Fragment} from 'react';
 import axios from 'axios';
 import {useParams, useHistory } from "react-router-dom";
 import styles from '../assets/css/pages/meditation.module.css';
@@ -96,7 +96,11 @@ function Meditation(props) {
             }
             {
               meditating && <span>
-                { Math.floor(remaining/60000) } minute{ Math.floor(remaining/60000) !== 1 && <span>s</span> } remaining
+                { remaining < 60000 && 
+                  <Fragment>Less than 1 minute</Fragment>
+                }{ remaining > 60000 && 
+                   <Fragment> { Math.floor(remaining/60000) } minute{Math.floor(remaining/60000) !== 1 && <span>s</span>  }</Fragment>
+                } remaining
               </span>
             }
           </div>
