@@ -18,3 +18,9 @@
 .card * {
     color: white;
 }
+
+.intro {
+    border: none;
+    padding-top: calc(2rem + 2px);
+    opacity: 1;
+}

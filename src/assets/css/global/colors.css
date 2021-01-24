@@ -71,45 +71,49 @@ body:hover .outermost, body:focus .outermost {
     background-image: conic-gradient( transparent 0deg, black 180deg, transparent 360deg);
 }
 
+.inner {
+    background-image: radial-gradient(circle at center, rgba(27, 26, 28, 1) 0%,  rgba(27, 26, 28, .25) 5%, transparent 26%);
+}
+
 /* Card Colors */
 
-.purple .inner {
+.purple .innermost {
     background-color: rgba(77, 1, 77, .12);
 }
 
-.blue .inner {
+.blue .innermost {
     background-color: rgba(11, 23, 55, .33);
 }
 
-.gold .inner {
+.gold .innermost {
     background-color: rgba(237, 188, 1, 0.08);
 }
 
-.red .inner {
+.red .innermost {
     background-color: rgba(100, 30, 10, 0.18);
 }
 
-.black .inner {
+.black .innermost {
     background-color: rgba(3, 1, 6, 0.13);
 }
 
-.press.purple .inner {
+.press.purple .innermost {
     background-color: rgba(77, 1, 77, .26);
 }
 
-.press.blue .inner{
+.press.blue .innermost{
     background-color: rgba(11, 23, 55, .44);
 }
 
-.press.gold .inner{
+.press.gold .innermost{
     background-color: rgba(237, 188, 1, 0.12);
 }
 
-.press.red .inner{
+.press.red .innermost{
     background-color: rgba(100, 30, 10, 0.26);
 }
 
-.press .inner {
+.press .innermost {
     background-color: none;
 }
 

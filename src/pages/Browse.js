@@ -91,7 +91,7 @@ function Browse(props) {
         <section className="o-section">
           <div className="row">
             <div className="col-md-3">
-              <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} />
+              <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} type="intro" />
             </div>
             <div className="col-md-9">
               <div className="row">
