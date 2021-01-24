@@ -1,117 +1,103 @@
 
-  
-   .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6, h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    margin-bottom: 20px;
-    margin-top: 0;
-    font-weight: 500;
+  html {
+    font-size: 62.5%;
+  }
+
+   .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6, h1, h2, h3, h4, h5, h6, button,
+   p, a, .body1, .body2, .subtitle1, .subtitle2, button, .u-button,
+   .overline, caption, .u-caption, small, .u-small {
     color: #ffffff;
     font-family: "Lato";
    }
 
-   .u-text-center {
-     text-align: center!important;
+   .u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6, h1, h2, h3, h4, h5, h6, button,
+   p, a, .body1, .body2 {
+    margin-block-start: .6875rem;
+    margin-block-end: .6875rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
    }
-  
-   button {
-     font-family: "Lato"
-   }
-  
-   p, a, .body1, .body2, .subtitle1, .subtitle2, button, .u-button,
-   .overline, caption, .u-caption, small, .u-small {
-    color: white;
-   }
-  
-   p, a, .body1, li {
-     font-size: 14px;
-     margin-bottom: 10px;
-     line-height: 22px;
-   }
-  
-  a {
-    text-decoration: none;
-    color:#b0d5f8;  
-  }
 
-  a:hover, a:focus {
-    text-decoration: none;
-    color:  #4679bb;      
-  }
+   .subtitle1, .subtitle2, button, .u-button {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+   }
 
-  a:active, a:visited { 
-    color: #dce7fa;
-  }
+   h1 {
+     font-size: 2.5rem;
+     line-height: 5.5rem;
+   }
 
-  @media (hover: hover) and (pointer: fine) {
-    a:hover {
-      text-decoration: none;
-      color: #4679bb;    
-    }
+   .u-h1 {
+    font-size: 2.5rem!important;
+    line-height: 5.5rem!important;
+    font-weight: bold!important;
+   }
+
+   h2 {
+    font-size: 2.3rem;
+    font-weight: normal;
+    line-height: 5.5rem;
+    font-style: italic;
+   }
+
+   .u-h2 {
+     font-size: 2.3rem!important;
+     font-weight: normal!important;
+     line-height: 5.5rem!important;
+   }
+
+   h3 {
+    font-size: 1.7rem;
+    line-height: 5.5rem;
+   }
+
+   .u-h3 {
+     font-size: 1.7rem!important;
+     font-weight: bold!important;
+     line-height: 5.5rem!important;
+   }
+
+   h4 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 5.5rem;
+   }
+
+   .u-h4 {
+     font-size: 1.5rem!important;
+     font-weight: normal!important;
+     line-height: 5.5rem!important;
+   }
+
+
+   p {
+     font-size: 1.5rem;
+     line-height: 2.75rem;
+   }
+
+   p.small {
+     font-size: 1.3rem;
+   }
+
+  .subtitle-above {
+    font-size: 13px;
+    line-height: 1.375rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: -.6875rem;
+    margin-top: 0;
   }
-  
-    h1, .u-h1 {
-      font-size: 96px;
-    }
-    h2, .u-h2 {
-      font-size: 60px;
-    }
-    h3, .u-h3 {
-      font-size: 45px;
-    }
-    h4 , .u-h4 {
-      font-size: 32px;
-    }
-    h5, .u-h5 {
-      font-size: 21px;
-    }
-    h6, .u-h6 {
-      font-size: 17px;
-    }
-  
-    .body2 {
-      font-size: 14px
-    }
-    .subtitle1 {
-      font-size: 18px;
-      margin-bottom: 7px;
-      line-height: 30px;
-    }
-    .subtitle2 {
-      font-size: 14px;
-      margin-bottom: 5px;
-      font-weight: medium
-    }
-    button, .u-button {
-      font-size: 14px
-    }
-    .overline {
-      font-size: 10px
-    }
-    caption, .u-caption {
-      font-size: 11px
-    }
-  
-    small, .u-small {
-      font-size: 11px;
-    }
-  
-    @media screen and (max-width: 1080px) {
-      h1, .u-h1 {
-        font-size: 64px;
-      }
-      h1, .u-h2 {
-        font-size: 48px;
-      }
-      h3, .u-h3 {
-        font-size: 40px;
-      }
-      h4 , .u-h4 {
-        font-size: 32px;
-      }
-      h5, .u-h5 {
-        font-size: 21px;
-      }
-      h6, .u-h6 {
-        font-size: 17px;
-      }
-    }
+  .subtitle1 {
+    font-size: 18px;
+    line-height: 2.75rem;
+    margin-top: -.6875rem;
+  }
+  .subtitle2 {
+    font-size: 14px;
+    line-height: 2.75rem;
+    margin-top: -.6875rem;
+    font-weight: bold;
+  }

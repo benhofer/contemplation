@@ -87,7 +87,7 @@ function Meditation(props) {
             <Icon icon={back} width="40px" color="white" />
           </button>
           <h1>{verse && verse.short_desc}</h1>
-          <h4 className={styles.attribution}>{verse && verse["attribution_hr"]}</h4>
+          <p className={`${styles.attribution} subtitle1`}>{verse && verse["attribution_hr"]}</p>
           <div className={styles.time}>
             {
               !meditating && <span>

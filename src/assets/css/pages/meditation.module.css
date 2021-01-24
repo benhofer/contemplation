@@ -12,6 +12,12 @@
     text-align: center;
 }
 
+.time {
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    padding: 2.75rem;
+}
+
 .meditate {
     position: absolute;
     display: block;

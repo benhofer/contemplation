@@ -10,9 +10,26 @@ function Card(props) {
     }
 
     return (
-        <div className={`${styles.card} ${props.type && styles[props.type]}`} id={props.id}>
-            <h1>{props.title}</h1>
-            <h4>{props.subtitle}</h4> 
+        <div className={`${styles.card} ${props.type && styles[props.type]} ${props.introType && props.introType}`} id={props.id}>
+            {
+                props.type && 
+                <p className="subtitle-above">{props.introType}</p>
+            }
+            {
+                props.type === 'intro' && 
+                <h1>{props.title}</h1>
+            }{
+                props.type !== 'intro' && 
+                <h2>
+                    {props.title} 
+                </h2>
+            }   
+            {   
+                props.subtitle && 
+                <p className="subtitle2">{props.subtitle} 
+                {/* • {props.work}  */}
+                </p> 
+            }
             <p>{text}</p>
         </div>
     )

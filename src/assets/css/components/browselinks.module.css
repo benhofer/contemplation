@@ -7,14 +7,16 @@
 
 .browse_links li {
     list-style: none;
+    padding: 0;
 }
 
 .browse_link, .browse_heading {
-    padding: 1rem 2rem;
-    margin-bottom: 1.875rem;
+    padding: 1.375rem 2rem;
+    margin-bottom: 2.75rem;
     color: white;
     text-decoration: none;
     font-size: 13.33333px;
+    line-height: 2.75rem; 
     margin-top:0;
     font-weight: 500;
 }

@@ -91,7 +91,7 @@ function Browse(props) {
         <section className="o-section">
           <div className="row">
             <div className="col-md-3">
-              <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} type="intro" />
+              <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} type="intro" introType={filter} />
             </div>
             <div className="col-md-9">
               <div className="row">
@@ -99,13 +99,13 @@ function Browse(props) {
                       expand !== i ? j < 3 && (
                         <div className="col-md-4">
                           <Link to={'/app/meditate/'+verse.id}>
-                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
+                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' work={verse.work} />
                           </Link>
                         </div>
                       ) : (
                         <div className="col-md-4">
                           <Link to={'/app/meditate/'+verse.id}>
-                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' />
+                              <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' work={verse.work} />
                           </Link>
                         </div>
                       )

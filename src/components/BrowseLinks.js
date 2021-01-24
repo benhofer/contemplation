@@ -14,8 +14,8 @@ function BrowseLinks(props) {
             <ul className={styles.browse_links}>
               
                 {props.links.map(link => 
-                    <li key={'browse-by-'+link.id+'-link'} className={styles.browse_link}>
-                        <NavLink to={"/app/browse?filter="+link.id}>{link.name}</NavLink>
+                    <li key={'browse-by-'+link.id+'-link'} >
+                        <NavLink className={styles.browse_link} to={"/app/browse?filter="+link.id}>{link.name}</NavLink>
                     </li>
                 )}
             </ul>

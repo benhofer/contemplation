@@ -4,6 +4,7 @@ import Meditations from './pages/Meditations';
 import BrowseLinks from "./components/BrowseLinks";
 import styles from './assets/css/pages/app.module.css';
 import './assets/css/global/main.css';
+import './assets/css/global/typography.css';
 import './assets/css/global/colors.css';
 import './assets/css/global/grid.css';
 import './assets/css/utilities/util.css';
