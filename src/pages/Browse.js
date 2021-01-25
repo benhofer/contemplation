@@ -93,10 +93,10 @@ function Browse(props) {
             <div className="col-md-3">
               <Card title={cat[0].name} text={cat[0].description} id={cat[0].id} type="intro" introType={filter} />
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 meditation-cards">
               <div className="row">
                   { cat[1].map((verse,j) => (
-                      expand !== i ? j < 3 && (
+                      expand !== i ? j < 6 && (
                         <div className="col-md-4">
                           <Link to={'/app/meditate/'+verse.id}>
                               <Card type="verse" title={verse.short_desc} subtitle={verse.attribution_hr} text={verse.text} url='link to meditation page' color='red' work={verse.work} />

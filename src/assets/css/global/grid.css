@@ -24,7 +24,7 @@
 
 .app-header h1 {
   line-height: 2.75rem;
-  margin: 1rem;
+  margin: .6875rem 1rem;
   text-align: center;
   display: block;
   position: relative;
@@ -99,6 +99,15 @@
     width: 40px;
     margin: calc(50vh - 20px) auto;
   }
+}
+
+.meditation-cards {
+  padding-top: 5.5rem;
+}
+
+/* Elements */
+ul {
+  margin: 1.375rem 0;
 }
 
 /* Flexbox Grid */
