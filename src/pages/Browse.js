@@ -77,7 +77,7 @@ function Browse(props) {
         } else if (filter === 'collection') {
           m = filterByCollection(response.data)
         }
-        console.log(m);
+        // console.log(m);
         setMeditations(m);
       })
       .catch((e) => {
