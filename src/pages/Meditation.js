@@ -29,44 +29,53 @@ function Meditation(props) {
 
     let bell1, audio, bell2; 
 
-    const playSequence = () => {
+    function playSequence() {
+
+      // set up the audio elements
       audioTimer.current = {};
       audioTimer.current.verseAudio = new Audio(verse.url);
       audioTimer.current.bell1Audio = new Audio(BELL_URL);
       audioTimer.current.bell2Audio = new Audio(BELL_URL);
 
-      setMeditating(true);
-
+      // get the current time and finish time
       let t = new Date().getTime();
-
       audioTimer.current.finish = t + length;
 
-      console.log('now', t);
-      console.log('length', length);
+      // create the audio sequence using callbacks 
+      audioTimer.current.bell1Audio.addEventListener('ended', (event) => {
+        audioTimer.current.verseAudio.play();
+      })
+      audioTimer.current.verseAudio.addEventListener('ended', (event) => {
+        audioTimer.current.bell2Audio.play(); 
+      })
+      audioTimer.current.bell2Audio.addEventListener('ended', (event) => {
+        let sequenceDuration = (audioTimer.current.verseAudio.duration + audioTimer.current.bell1Audio.duration + audioTimer.current.bell1Audio.duration) * 1000; 
+        audioTimer.current.silenceTimer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, length - sequenceDuration*2);
+      })
 
-      audioTimer.current.bell1Timer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, 800)
-      audioTimer.current.verseTimer = window.setTimeout(() => {audioTimer.current.verseAudio.play()}, 2400)
-      audioTimer.current.intervalCountdown = window.setInterval(() => { let now = new Date().getTime(); let r = (audioTimer.current.finish - now); setRemaining(r) }, 30000);
-      audioTimer.current.bell2Timer = window.setTimeout(() => {audioTimer.current.bell2Audio.play(); setMeditating(false); props.setEngagement(''); }, length)
+      // begin the prayer
+      setMeditating(true);
+      audioTimer.current.bell1Audio.play();
+      audioTimer.current.intervalCountdown = window.setInterval(() => { let now = new Date().getTime(); let r = ( audioTimer.current.finish - now ); setRemaining(r) }, 30000);
+
+      // timer for entire meditation
+      audioTimer.current.meditationCounter = window.setTimeout(() => { stopSequence(); setMeditating(false); }, length);
+    
+    }
+
+    function stopSequence() {
+      if (audioTimer && audioTimer.current) {
+        audioTimer.current.intervalCountdown && window.clearInterval(audioTimer.current.intervalCountdown);
+        audioTimer.current.silenceTimer && window.clearInterval(audioTimer.current.silenceTimer);
+        audioTimer.current.verseAudio && audioTimer.current.verseAudio.pause();
+        audioTimer.current.bell1Audio && audioTimer.current.bell1Audio.pause();
+        audioTimer.current.bell2Audio && audioTimer.current.bell2Audio.pause(); 
+      } 
     }
 
     useEffect(() => {
       return () => {
-        if (audioTimer && audioTimer.current) {
-          audioTimer.current.intervalCountdown && window.clearInterval(audioTimer.current.intervalCountdown);
-          if (audioTimer.current.verseAudio) {
-            audioTimer.current.verseAudio.pause();
-            window.clearTimeout(audioTimer.current.verseTimer)
-          } 
-          if (audioTimer.current.bell1Audio) {
-            audioTimer.current.bell1Audio.pause();
-            window.clearTimeout(audioTimer.current.bell1Timer)
-          }
-          if (audioTimer.current.bell2Audio) {
-            audioTimer.current.bell2Audio.pause();
-            window.clearTimeout(audioTimer.current.bell2Timer)
-          }
-        } 
+        stopSequence();
       }
     }, [audio, bell1, bell2])
 
@@ -105,7 +114,7 @@ function Meditation(props) {
             }
           </div>
           { !meditating && 
-            <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => props.setEngagement('')} onMouseOver={() => {console.log("press"); props.setEngagement('press')}} onClick={() => playSequence()}>
+            <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => props.setEngagement('')} onMouseOver={() => {props.setEngagement('press')}} onClick={() => playSequence()}>
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
             </button>
           }{ meditating && 
