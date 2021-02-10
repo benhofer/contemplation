@@ -7,31 +7,34 @@ import play from '@iconify-icons/mdi/play-circle';
 import back from '@iconify-icons/mdi/keyboard-backspace';
 import cross from '../assets/img/cross.svg';
 
-const API_URL = "/data.json";
+const API_URL = "'https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data'"
 const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
 
 function Meditation(props) { 
+
     const [ verse, setVerse ] = useState(null);
     const [ meditating, setMeditating ] = useState(false);
+    // TODO - make length editable via UI
     const [ length, setLength ] = useState(300000);
     const [ remaining, setRemaining ] = useState(length - 1);
 
+    // We'll need history to go back to the previous page 
     let history = useHistory();
-    let { id } = useParams();
-
-    let verseId = parseInt(id.replace(/\/app\/meditate\//, ''));
-
-    let audioTimer = useRef(null); 
-
     const exit = () => {
       history.goBack();
     }
 
+    // Find the verse id from the params
+    let { id } = useParams();
+    let verseId = parseInt(id.replace(/\/app\/meditate\//, ''));
+
+    // Setup the useRef object for the timers 
+    let audioTimer = useRef(null); 
     let bell1, audio, bell2; 
 
+    // Play 
     function playSequence() {
-
-      // set up the audio elements
+      // Setup audio elements
       audioTimer.current = {};
       audioTimer.current.verseAudio = new Audio(verse.url);
       audioTimer.current.bell1Audio = new Audio(BELL_URL);
@@ -53,16 +56,25 @@ function Meditation(props) {
         audioTimer.current.silenceTimer = window.setTimeout(() => {audioTimer.current.bell1Audio.play()}, length - sequenceDuration*2);
       })
 
-      // begin the prayer
+      // Begin the prayer
       setMeditating(true);
       audioTimer.current.bell1Audio.play();
-      audioTimer.current.intervalCountdown = window.setInterval(() => { let now = new Date().getTime(); let r = ( audioTimer.current.finish - now ); setRemaining(r) }, 30000);
+      
+      // Set interval to check the time every 30 seconds
+      audioTimer.current.intervalCountdown = window.setInterval(() => { 
+        let now = new Date().getTime(); 
+        let r = ( audioTimer.current.finish - now ); 
+        setRemaining(r) 
+      }, 30000);
 
-      // timer for entire meditation
-      audioTimer.current.meditationCounter = window.setTimeout(() => { stopSequence(); setMeditating(false); }, length);
-    
+      // Once the prayer is completed, clear timers and toggle the state
+      audioTimer.current.meditationCounter = window.setTimeout(() => { 
+        stopSequence(); 
+        setMeditating(false); 
+      }, length);
     }
 
+    // Define the function to clear all the timers
     function stopSequence() {
       if (audioTimer && audioTimer.current) {
         audioTimer.current.intervalCountdown && window.clearInterval(audioTimer.current.intervalCountdown);
@@ -73,12 +85,14 @@ function Meditation(props) {
       } 
     }
 
+    // Run stop function on dismount
     useEffect(() => {
       return () => {
         stopSequence();
       }
     }, [audio, bell1, bell2])
 
+    // API call runs on mount
     useEffect(() => {
       axios.get(API_URL)
         .then((response) => {
@@ -108,12 +122,14 @@ function Meditation(props) {
                 { remaining < 60000 && 
                   <Fragment>Less than 1 minute</Fragment>
                 }{ remaining > 60000 && 
+                   /* break out logic */
                    <Fragment> { Math.floor(remaining/60000) } minute{Math.floor(remaining/60000) !== 1 && <span>s</span>  }</Fragment>
                 } remaining
               </span>
             }
           </div>
           { !meditating && 
+           /* onMouseEnter and onMouseLeave instead */
             <button className={`${styles.play_btn} ${styles.meditate}`} onMouseOut={() => props.setEngagement('')} onMouseOver={() => {props.setEngagement('press')}} onClick={() => playSequence()}>
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
             </button>

@@ -22,7 +22,6 @@ body {
     transition: background-color .7s ease-out, opacity .7s ease-out;
 }
 
-
 .gels img {
     transition: opacity .2s;
     opacity: 0;
@@ -34,25 +33,10 @@ body {
 .meditation-page img {
     opacity: 0;
 }
-  
 
 html, .solid {
     transition: background-color .6s;
 }
-
-    /* engaged meditation */
-     /* background-image: radial-gradient(
-        rgba(126, 126, 75, .68) 0,
-        rgba(57, 52, 51, .83) 40%,
-        transparent
-      );; */
-
-    /*  */
-
-    /* press */
-    /*  */
-
-
 
 .gels {
     background: white;
@@ -74,8 +58,6 @@ body:hover .outermost, body:focus .outermost {
 .inner {
     background-image: radial-gradient(circle at center, rgba(27, 26, 28, .75) 0%,  rgba(27, 26, 28, .25) 5%, transparent 26%);
 }
-
-/* Card Colors */
 
 .purple .innermost {
     background-color: rgba(77, 1, 77, .12);
