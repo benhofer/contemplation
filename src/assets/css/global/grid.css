@@ -4,7 +4,6 @@
 }
 
 .app-header {
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   z-index: 1;
@@ -28,11 +27,6 @@
   text-align: center;
   display: block;
   position: relative;
-  font-size: 2.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1.1rem;
-  text-indent: .75rem;
-  font-weight: 100;
 }
 
 .app-header h1 a {

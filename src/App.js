@@ -53,6 +53,7 @@ function AnimationApp() {
   const [ engagement, setEngagement ] = useState('welcome');
   const [ colorClass, setColorClass ] = useState('gold');
   const [ bgImg, setBgImg ] = useState({src: cross, alt: 'The Cross'});
+  const [ showCurious, setShowCurious ] = useState(false);
 
   let location = useLocation();
 
@@ -81,13 +82,28 @@ function AnimationApp() {
           </TransitionGroup>
 
           <div id="main" className={`main`}>
+            {showCurious && 
+              <div className={styles.curious} onClick={()=>setShowCurious(false)}>
+                <div>
+                  <h1>About Tempora</h1>
+                  <p>Tempora provides resources for the practice of centering prayer.</p>
+                  <p>"Centering Prayer is a receptive method of Christian silent prayer that prepares us to receive the gift of contemplative prayer, prayer in which we experience God’s presence within us, closer than breathing, closer than thinking, closer than consciousness itself."</p>
+                  <p>&mdash; <a target="_blank" rel="noopener noreferrer" href="https://www.contemplativeoutreach.org/centering-prayer-method/">Learn more at ContemplativeOutreach.org</a></p>
+                </div>
+              </div>
+            }
             <Router>
               <Switch>     
                 <Route path="/app/:m" children={<Meditations browseLinks={browseLinks} goHome={goHome} setColor={(c) => setColorClass(c)} setEngagement={setEngagement} />} />
                 <Route exact path="/app">
                   <div>
                     <header className={`${styles.header} app-header home`}> 
-                      <h1><NavLink to="/app">TEMPORA</NavLink></h1>                   
+                      <div>
+                        <h1>TEMPORA</h1>
+                        <span className={`${styles.subtitle} subtitle2`} onClick={() => setShowCurious(true)}>
+                          An App for Centering Prayer
+                        </span>
+                      </div>
                     </header>  
                     <Search />
                     <div className={styles.browse_section}>

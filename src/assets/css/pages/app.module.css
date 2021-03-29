@@ -14,3 +14,38 @@ body:hover .header a:focus {
     width: 100%;
     bottom: 12vh;
 }
+
+.header h1 {
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.1rem;
+    text-indent: .75rem;
+    display: block;
+    font-weight: 100;
+}
+
+.header div {
+    font-weight: 100;
+    text-align: center;
+}
+
+.subtitle {
+    cursor: pointer;
+}
+
+.curious {
+    height: calc(100vh - 5.5rem);
+    width: calc(100vw - 5.5rem); 
+    top: 0;
+    margin-top: 2.75rem;
+    margin-left: 2.75rem;
+    position: absolute;
+    padding: 2.75rem;
+    z-index: 1000;
+    background-color: rgba(10,10,10,.95);
+}
+
+.curious div {
+    max-width: 550px;
+    margin: 11rem auto;
+}
