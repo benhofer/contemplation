@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import play from '@iconify-icons/mdi/play-circle';
 import back from '@iconify-icons/mdi/keyboard-backspace';
 import cross from '../assets/img/cross.svg';
-import NoSleep from 'nosleep.js';
+import shim from '../assets/img/shim.mp4';
 
 const API_URL = "https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data"
 const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
@@ -18,8 +18,7 @@ function Meditation(props) {
     // TODO - make length editable via UI
     const [ length, setLength ] = useState(300000);
     const [ remaining, setRemaining ] = useState(length - 1);
-    var noSleep = new NoSleep();
-    
+
     // We'll need history to go back to the previous page 
     let history = useHistory();
     const exit = () => {
@@ -136,9 +135,18 @@ function Meditation(props) {
               <Icon icon={play} width="80px" color="white" style={{ textAlign: 'center'}}/>
             </button>
           }{ meditating && 
-            <div className={`${styles.icon} ${styles.meditate}`} >
-              <img src={cross} alt='The Cross' width='100px' />
-            </div>
+            <>
+              <div className={`${styles.icon} ${styles.meditate}`} >
+                <img src={cross} alt='The Cross' width='100px' />
+              </div>
+              {/* Shim Video to keep your phone from going to sleep */}
+              <div className={styles.shim} style={{opacity: '.25', borderRadius: 300}}>
+                <video loop="true" autoplay="true" width="10">
+                  <source src={shim}
+                        type="video/mp4" />
+                </video>
+              </div>
+            </>
           }
       </div>
     )

@@ -23,9 +23,20 @@
     display: block;
 }
 
+.shim {
+    left: calc(50vw - 5px);
+    top: calc(50vh - 5px);
+    position: absolute;
+    width: 200px;
+    height: 200px; 
+    border-radius: 200px;
+    overflow: hidden;
+}
+
 .icon {
     left: calc(50vw - 50px);
     top: calc(50vh - 50px);
+    z-index: 1200;
 }
 
 .play_btn {
@@ -48,3 +59,4 @@
     border: none;
     cursor: pointer;
 }
+
