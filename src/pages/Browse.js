@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link, NavLink, useParams, useHistory, useLocation } from "react-router-dom";
 
-const API_URL = "'https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data'"
+const API_URL = "https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data"
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.

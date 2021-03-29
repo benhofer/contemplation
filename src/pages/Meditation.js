@@ -6,8 +6,9 @@ import { Icon } from '@iconify/react';
 import play from '@iconify-icons/mdi/play-circle';
 import back from '@iconify-icons/mdi/keyboard-backspace';
 import cross from '../assets/img/cross.svg';
+import NoSleep from 'nosleep.js';
 
-const API_URL = "'https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data'"
+const API_URL = "https://mjpsvgqnl7.execute-api.us-east-1.amazonaws.com/data"
 const BELL_URL = "https://s3.amazonaws.com/tempora-pray-web-bucket/bells/Ship_Bell_mono.mp3"
 
 function Meditation(props) { 
@@ -17,7 +18,8 @@ function Meditation(props) {
     // TODO - make length editable via UI
     const [ length, setLength ] = useState(300000);
     const [ remaining, setRemaining ] = useState(length - 1);
-
+    var noSleep = new NoSleep();
+    
     // We'll need history to go back to the previous page 
     let history = useHistory();
     const exit = () => {
