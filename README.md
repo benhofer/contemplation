@@ -2,9 +2,7 @@
 
 App for aiding in contemplative prayer.
 
---
-
-# Create React App
+# Bootstrapped Using Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
