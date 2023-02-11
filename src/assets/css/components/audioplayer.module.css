@@ -1,0 +1,26 @@
+
+.play_btn {
+    left: calc(50vw - 4rem);
+    top: calc(50vh - 4rem);
+    height: 8rem; 
+    width: 8rem;
+    border: none;
+    background: transparent;
+}
+
+.play_btn:active, 
+.back_btn:active {
+    outline: 0px;
+    border: none;
+}
+
+.icon {
+    left: calc(50vw - 50px);
+    top: calc(50vh - 50px);
+    z-index: 1200;
+}
+
+.meditate {
+    position: absolute;
+    display: block;
+}
